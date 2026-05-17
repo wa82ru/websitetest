@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アルファード貸切｜株式会社 山元交通</title>
+  <meta name="description" content="山元交通のアルファード貸切サービス。観光・空港送迎・クルーズ船ツアー・法人VIP・冠婚葬祭まで。最大6名乗車、鹿児島市。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* HERO */
+    .alphard-hero {
+      background: var(--navy-dk);
+      padding: 0; position: relative; overflow: hidden;
+    }
+    .alphard-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 60% 50%, rgba(232,146,10,0.12) 0%, transparent 55%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 48px);
+    }
+    .alphard-hero-inner {
+      max-width: 1080px; margin: 0 auto;
+      padding: 52px 1.5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: flex-end;
+      position: relative;
+    }
+    @media (max-width: 720px) {
+      .alphard-hero-inner { grid-template-columns: 1fr; padding-bottom: 0; }
+    }
+    .alphard-hero-text { padding-bottom: 52px; }
+    .alphard-hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(232,146,10,0.2);
+      border: 1px solid rgba(232,146,10,0.45);
+      color: var(--orange-lt);
+      font-size: 12px; padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .alphard-hero h1 {
+      font-size: 32px; font-weight: 500; color: #fff;
+      line-height: 1.45; margin-bottom: 14px; letter-spacing: 0.01em;
+    }
+    .alphard-hero h1 em { color: var(--orange-lt); font-style: normal; }
+    .alphard-hero-desc {
+      color: rgba(255,255,255,0.72); font-size: 14px;
+      line-height: 1.9; margin-bottom: 28px;
+    }
+    .alphard-hero-specs {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px;
+    }
+    .spec-pill {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff; font-size: 13px; padding: 5px 14px; border-radius: 20px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .alphard-hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* 車両フォトエリア */
+    .alphard-photo-wrap {
+      position: relative; align-self: flex-end;
+    }
+    .alphard-photo {
+      width: 100%; aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #1e3d5c 0%, #2a5078 40%, #1a3050 100%);
+      border-radius: 16px 16px 0 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .alphard-photo-car { font-size: 90px; opacity: 0.85; margin-bottom: 8px; }
+    .alphard-photo-label {
+      background: rgba(0,0,0,0.35); color: rgba(255,255,255,0.7);
+      font-size: 11px; padding: 4px 14px; border-radius: 4px;
+    }
+    .alphard-photo-badge {
+      position: absolute; top: 14px; right: 14px;
+      background: var(--orange); color: #fff;
+      font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 4px;
+    }
+    /* 写真差し替え用 img タグ（後で src を指定） */
+    .alphard-photo img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; border-radius: 16px 16px 0 0;
+    }
+
+    /* POINT BAR */
+    .point-bar {
+      background: var(--orange); padding: 12px 0;
+    }
+    .point-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 1.5rem;
+      display: flex; gap: 20px; flex-wrap: wrap; align-items: center;
+    }
+    .pt { display: flex; align-items: center; gap: 7px; color: #fff; font-size: 13px; font-weight: 500; }
+    .pt-chk {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: rgba(255,255,255,0.28);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; flex-shrink: 0;
+    }
+
+    /* INTERIOR PHOTOS */
+    .interior-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-top: 28px;
+    }
+    @media (max-width: 600px) { .interior-grid { grid-template-columns: 1fr 1fr; } }
+    .interior-photo {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #e8e4dc, #d0ccc0);
+      border-radius: var(--radius-sm);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      border: 1px solid var(--gray-bd);
+    }
+    .interior-photo .ph-icon { font-size: 32px; opacity: 0.5; }
+    .interior-photo .ph-label {
+      font-size: 11px; color: #888; margin-top: 6px;
+    }
+    /* 写真差し替え用 */
+    .interior-photo img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; border-radius: var(--radius-sm);
+    }
+
+    /* SPEC TABLE */
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .spec-table th, .spec-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-bd); }
+    .spec-table th { background: var(--cream); color: var(--navy); font-weight: 500; text-align: left; width: 35%; white-space: nowrap; }
+    .spec-table td { color: var(--text-md); }
+
+    /* USE CARDS */
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .use-card {
+      background: #fff; border-radius: var(--radius);
+      border: 1px solid var(--gray-bd); overflow: hidden;
+    }
+    .use-card-top {
+      padding: 22px 22px 16px;
+    }
+    .use-icon-row {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+    }
+    .use-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .use-icon-o { background: var(--orange-bg); }
+    .use-icon-b { background: var(--blue-lt); }
+    .use-icon-g { background: var(--green-lt); }
+    .use-icon-p { background: #fce8ee; }
+    .use-icon-y { background: #fdf8e4; }
+    .use-card h3 { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+    .use-card p  { font-size: 13px; color: var(--text-md); line-height: 1.7; }
+    .use-card-footer {
+      border-top: 1px solid var(--gray-bd);
+      padding: 11px 22px; background: #faf8f5;
+    }
+    .use-points { display: flex; flex-direction: column; gap: 4px; }
+    .use-point { font-size: 12px; color: var(--text-md); display: flex; gap: 6px; align-items: flex-start; }
+    .use-point::before { content: '✓'; color: var(--green-tx); font-size: 11px; margin-top: 2px; flex-shrink: 0; }
+
+    /* FLOW */
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0; position: relative;
+    }
+    .flow-step { text-align: center; padding: 0 10px; position: relative; }
+    .flow-step:not(:last-child)::after {
+      content: '▶'; position: absolute; right: -6px; top: 18px;
+      color: var(--orange); font-size: 14px;
+    }
+    .fs-circle {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--orange-bg); border: 2px solid var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 8px; font-size: 20px;
+    }
+    .fs-num   { font-size: 10px; color: var(--orange); font-weight: 700; margin-bottom: 3px; }
+    .fs-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 5px; }
+    .fs-desc  { font-size: 12px; color: var(--text-lt); line-height: 1.6; }
+
+    /* FAQ */
+    .faq-item { border: 1px solid var(--gray-bd); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 10px; }
+    .faq-q { background: var(--cream); padding: 13px 16px; font-size: 14px; font-weight: 500; color: var(--navy); display: flex; gap: 10px; }
+    .faq-q-mark { color: var(--orange); flex-shrink: 0; }
+    .faq-a { padding: 13px 16px; font-size: 13px; color: var(--text-md); line-height: 1.8; display: flex; gap: 10px; }
+    .faq-a-mark { color: var(--navy); font-weight: 700; flex-shrink: 0; }
+
+    /* FARE COMPARE TABLE */
+    .fare-compare-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 8px; }
+    .fare-compare-table th, .fare-compare-table td { padding: 11px 16px; border-bottom: 1px solid var(--gray-bd); }
+    .fare-compare-table th { background: var(--navy-dk); color: #fff; font-weight: 500; text-align: center; }
+    .fare-compare-table th:first-child { text-align: left; background: var(--cream); color: var(--navy); }
+    .fare-compare-table td { color: var(--text-md); text-align: center; }
+    .fare-compare-table td:first-child { text-align: left; color: var(--navy); font-weight: 500; }
+    .fare-compare-table .alphard-col { background: #fef9f2; }
+    .fare-compare-table th.alphard-col { background: var(--orange); }
+
+    /* PRICE */
+    .price-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .price-card {
+      background: #fff; border: 1px solid var(--gray-bd);
+      border-radius: var(--radius); padding: 22px 20px; text-align: center;
+    }
+    .price-card.featured {
+      border: 2px solid var(--orange);
+    }
+    .price-card-label { font-size: 12px; color: var(--text-lt); margin-bottom: 8px; }
+    .price-card-val {
+      font-size: 28px; font-weight: 700; color: var(--navy);
+      font-family: 'Lato', sans-serif; line-height: 1; margin-bottom: 4px;
+    }
+    .price-card-unit { font-size: 14px; font-weight: 400; }
+    .price-card-note { font-size: 12px; color: var(--text-lt); margin-top: 8px; line-height: 1.6; }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- HERO -->
+<div class="alphard-hero">
+  <div class="alphard-hero-bg"></div>
+  <div class="alphard-hero-inner">
+    <div class="alphard-hero-text">
+      <div class="breadcrumb">
+        <a href="index.html">ホーム</a><span>/</span>
+        <span class="breadcrumb-cur">アルファード貸切</span>
+      </div>
+      <div class="alphard-hero-tag">🚐 プレミアム車両</div>
+      <h1 data-i18n="al.hero.h1">特別な移動を、<br><em>上質な空間</em>で。<br>アルファード貸切サービス</h1>
+      <p class="alphard-hero-desc">
+        観光・空港送迎・クルーズ船ツアー・法人VIP・冠婚葬祭まで。<br>
+        最大6名がゆったり乗れる山元交通のプレミアム車両です。
+      </p>
+      <div class="alphard-hero-specs">
+        <div class="spec-pill">👥 最大6名乗車</div>
+        <div class="spec-pill">🧳 大型トランク対応</div>
+        <div class="spec-pill">💳 キャッシュレスOK</div>
+        <div class="spec-pill">📝 事前予約制</div>
+      </div>
+      <div class="alphard-hero-btns">
+        <a href="contact.html" class="btn btn-primary">予約・問い合わせ</a>
+        <a href="#alphard-fare" class="btn btn-outline" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8)">料金を確認する</a>
+      </div>
+    </div>
+    <div class="alphard-photo-wrap">
+      <div class="alphard-photo">
+        <!-- ↓ 写真が用意できたら src を指定してください -->
+        <img src="images/alphard_main.jpg" alt="アルファード ANH10W 白 外観"
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px 16px 0 0;"
+             onerror="this.style.display='none'">
+        <div class="alphard-photo-car" style="position:relative;z-index:1">🚐</div>
+        <div style="position:relative;z-index:1;font-size:12px;color:rgba(255,255,255,0.65);margin-top:6px;background:rgba(0,0,0,0.35);padding:4px 14px;border-radius:4px">
+          平成17年式 CBA-ANH10W ／ 白<br>
+          <span style="font-size:10px;opacity:0.7">📷 images/alphard_main.jpg に写真を置いてください</span>
+        </div>
+        <div class="alphard-photo-badge">貸切専用車</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POINT BAR -->
+<div class="point-bar">
+  <div class="point-inner">
+    <div class="pt"><div class="pt-chk">✓</div> 観光貸切専用車両</div>
+    <div class="pt"><div class="pt-chk">✓</div> ベテランドライバーが担当</div>
+    <div class="pt"><div class="pt-chk">✓</div> 最大6名までOK</div>
+    <div class="pt"><div class="pt-chk">✓</div> 荷物が多くても安心</div>
+    <div class="pt"><div class="pt-chk">✓</div> 全用途対応・事前予約</div>
+  </div>
+</div>
+
+<!-- INTERIOR PHOTOS -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="al.gallery.title">車内・外観ギャラリー</div>
+      <div class="sec-sub">写真は後で差し替えられます。src属性に画像パスを指定してください。</div>
+    </div>
+    <div class="interior-grid">
+      <div class="interior-photo">
+        <img src="images/alphard_front.jpg" alt="フロントビュー" onerror="this.style.display='none'">
+        <div class="ph-icon">🚐</div>
+        <div class="ph-label">フロント ／ images/alphard_front.jpg</div>
+      </div>
+      <div class="interior-photo">
+        <img src="images/alphard_side.jpg" alt="サイドビュー" onerror="this.style.display='none'">
+        <div class="ph-icon">🚗</div>
+        <div class="ph-label">サイド ／ images/alphard_side.jpg</div>
+      </div>
+      <div class="interior-photo">
+        <img src="images/alphard_rear.jpg" alt="リアビュー" onerror="this.style.display='none'">
+        <div class="ph-icon">🔙</div>
+        <div class="ph-label">リア ／ images/alphard_rear.jpg</div>
+      </div>
+      <div class="interior-photo">
+        <img src="images/alphard_interior1.jpg" alt="車内シート" onerror="this.style.display='none'">
+        <div class="ph-icon">💺</div>
+        <div class="ph-label">車内シート ／ images/alphard_interior1.jpg</div>
+      </div>
+      <div class="interior-photo">
+        <img src="images/alphard_interior2.jpg" alt="後部座席" onerror="this.style.display='none'">
+        <div class="ph-icon">🪑</div>
+        <div class="ph-label">後部座席 ／ images/alphard_interior2.jpg</div>
+      </div>
+      <div class="interior-photo">
+        <img src="images/alphard_trunk.jpg" alt="トランク" onerror="this.style.display='none'">
+        <div class="ph-icon">🧳</div>
+        <div class="ph-label">トランク ／ images/alphard_trunk.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEC -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="al.spec.title">車両スペック</div>
+    </div>
+    <table class="spec-table">
+      <tr><th>車種</th><td>トヨタ アルファード</td></tr>
+      <tr><th>乗車定員</th><td>最大6名（ドライバー除く）</td></tr>
+      <tr><th>用途</th><td>観光貸切専用車</td></tr>
+      <tr><th>トランク</th><td>大型スーツケース対応</td></tr>
+      <tr><th>設備</th><td>エアコン完備・USB充電ポート</td></tr>
+      <tr><th>対応決済</th><td>現金・クレジットカード・QRコード決済</td></tr>
+      <tr><th>予約方法</th><td>電話・メール・ウェブフォームにて事前予約</td></tr>
+      <tr><th>備考</th><td>1台のみのため、ご予約はお早めに</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="al.use.title">こんな場面でご利用いただけます</div>
+      <div class="sec-sub" data-i18n="al.use.sub">アルファードだからこそ叶う、特別な移動体験</div>
+    </div>
+    <div class="use-grid">
+
+      <div class="use-card">
+        <div class="use-card-top">
+          <div class="use-icon-row">
+            <div class="use-icon use-icon-o">🌋</div>
+            <div>
+              <span class="badge badge-orange">人気</span>
+            </div>
+          </div>
+          <h3 data-i18n="al.u1.title">観光・貸切ツアー</h3>
+          <p>桜島・指宿・霧島・知覧など。グループや家族旅行で鹿児島を贅沢に巡れます。荷物が多くても安心。</p>
+        </div>
+        <div class="use-card-footer">
+          <div class="use-points">
+            <div class="use-point">6名まで同乗できるから割り勘でお得</div>
+            <div class="use-point">大型荷物・ベビーカーもトランクに</div>
+            <div class="use-point">途中の寄り道・変更も自由</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-card">
+        <div class="use-card-top">
+          <div class="use-icon-row">
+            <div class="use-icon use-icon-b">✈️</div>
+            <div>
+              <span class="badge badge-label">おすすめ</span>
+            </div>
+          </div>
+          <h3 data-i18n="al.u2.title">空港・駅 送迎</h3>
+          <p>鹿児島空港・鹿児島中央駅からグループでの移動に最適。大型トランクも余裕で積めます。</p>
+        </div>
+        <div class="use-card-footer">
+          <div class="use-points">
+            <div class="use-point">スーツケース複数個もOK</div>
+            <div class="use-point">フライト時間に合わせた時間指定可</div>
+            <div class="use-point">複数台に分乗する必要なし</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-card">
+        <div class="use-card-top">
+          <div class="use-icon-row">
+            <div class="use-icon use-icon-b">⚓</div>
+            <div>
+              <span class="badge badge-green">新設</span>
+            </div>
+          </div>
+          <h3 data-i18n="al.u3.title">クルーズ船 寄港地ツアー</h3>
+          <p>マリンポートかごしまから出発。グループでゆったり、鹿児島の名所を効率よく巡れます。</p>
+        </div>
+        <div class="use-card-footer">
+          <div class="use-points">
+            <div class="use-point">乗船時間に合わせたコース設計</div>
+            <div class="use-point">船仲間グループでの利用に最適</div>
+            <div class="use-point">英語・翻訳アプリ対応可</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-card">
+        <div class="use-card-top">
+          <div class="use-icon-row">
+            <div class="use-icon use-icon-g">🏢</div>
+            <div>
+              <span class="badge badge-label">法人</span>
+            </div>
+          </div>
+          <h3 data-i18n="al.u4.title">法人・VIP送迎</h3>
+          <p>大切なお客様や役員の送迎に。清潔で広々とした車内と、経験豊富なドライバーがお迎えします。</p>
+        </div>
+        <div class="use-card-footer">
+          <div class="use-points">
+            <div class="use-point">上質な車内空間でVIPに対応</div>
+            <div class="use-point">定期契約・継続利用も相談可</div>
+            <div class="use-point">領収書発行対応</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-card">
+        <div class="use-card-top">
+          <div class="use-icon-row">
+            <div class="use-icon use-icon-p">💍</div>
+            <div>
+              <span class="badge badge-label">特別な日</span>
+            </div>
+          </div>
+          <h3 data-i18n="al.u5.title">冠婚葬祭・記念日</h3>
+          <p>結婚式の送迎、法事、卒業式など。大切な一日の移動を、ゆったりと上質な空間でお手伝いします。</p>
+        </div>
+        <div class="use-card-footer">
+          <div class="use-points">
+            <div class="use-point">家族・親族まとめて乗車可</div>
+            <div class="use-point">礼服・着物でも乗り降りしやすい</div>
+            <div class="use-point">事前打ち合わせで安心</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="use-card">
+        <div class="use-card-top">
+          <div class="use-icon-row">
+            <div class="use-icon use-icon-y">🎌</div>
+            <div>
+              <span class="badge badge-label">その他</span>
+            </div>
+          </div>
+          <h3 data-i18n="al.u6.title">その他・カスタム</h3>
+          <p>スポーツ観戦、同窓会、サークル旅行など。用途に合わせて柔軟にご対応します。</p>
+        </div>
+        <div class="use-card-footer">
+          <div class="use-points">
+            <div class="use-point">まずはお気軽にご相談ください</div>
+            <div class="use-point">行き先・時間・人数を教えてください</div>
+            <div class="use-point">見積もり無料</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="section" id="alphard-fare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title">アルファード料金案内</div>
+      <div class="sec-sub">アルファードは「特定大型車」に該当するため、普通車とは料金体系が異なります。</div>
+    </div>
+
+    <!-- 基本運賃比較 -->
+    <div style="margin-bottom:32px">
+      <div style="font-size:15px;font-weight:500;color:var(--navy);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--orange);display:inline-block">距離制運賃（メーター料金）</div>
+      <table class="fare-compare-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th class="alphard-col">アルファード<br><span style="font-size:10px;font-weight:400">（特定大型車）</span></th>
+            <th>普通車</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>初乗り運賃</td>
+            <td class="alphard-col">1.3kmまで <strong style="color:var(--orange)">880円</strong></td>
+            <td>1.3kmまで <strong>770円</strong></td>
+          </tr>
+          <tr>
+            <td>加算運賃</td>
+            <td class="alphard-col">183mごとに <strong style="color:var(--orange)">100円</strong></td>
+            <td>145mごとに <strong>50円</strong></td>
+          </tr>
+          <tr>
+            <td>時間距離併用<br><span style="font-size:11px;color:var(--text-lt)">時速10km以下</span></td>
+            <td class="alphard-col">1分10秒ごとに <strong style="color:var(--orange)">100円</strong></td>
+            <td>55秒ごとに <strong>50円</strong></td>
+          </tr>
+          <tr>
+            <td>待料金</td>
+            <td class="alphard-col">1分10秒ごとに <strong style="color:var(--orange)">100円</strong></td>
+            <td>55秒ごとに <strong>50円</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 時間制運賃 -->
+    <div style="margin-bottom:32px">
+      <div style="font-size:15px;font-weight:500;color:var(--navy);margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--orange);display:inline-block">時間制運賃（観光貸切・事前予約制）</div>
+      <table class="fare-compare-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th class="alphard-col">アルファード<br><span style="font-size:10px;font-weight:400">（特定大型車）</span></th>
+            <th>普通車</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>時間制運賃<br><span style="font-size:11px;color:var(--text-lt)">30分ごと</span></td>
+            <td class="alphard-col"><strong style="color:var(--orange)">4,030円</strong></td>
+            <td><strong>2,730円</strong></td>
+          </tr>
+          <tr>
+            <td>4時間貸切目安</td>
+            <td class="alphard-col">約 <strong style="color:var(--orange)">32,240円</strong></td>
+            <td>約 <strong>21,840円</strong></td>
+          </tr>
+          <tr>
+            <td>6時間貸切目安</td>
+            <td class="alphard-col">約 <strong style="color:var(--orange)">48,360円</strong></td>
+            <td>約 <strong>32,760円</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-top:10px;font-size:13px;color:var(--text-lt)">
+        ※ 時間制運賃は営業所との事前予約が必要です。乗務員との直接契約はできません。
+      </div>
+    </div>
+
+    <!-- 割増・割引 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px">
+      <div style="background:var(--cream);border-radius:var(--radius-sm);padding:18px 20px">
+        <div style="font-size:13px;font-weight:500;color:var(--navy);margin-bottom:10px">割増料金</div>
+        <div style="font-size:13px;color:var(--text-md);line-height:2">
+          🌙 深夜早朝割増（22時〜5時）<br>
+          <strong style="color:var(--orange)">2割増</strong>
+        </div>
+      </div>
+      <div style="background:var(--green-lt);border-radius:var(--radius-sm);padding:18px 20px">
+        <div style="font-size:13px;font-weight:500;color:var(--navy);margin-bottom:10px">割引サービス</div>
+        <div style="font-size:13px;color:var(--text-md);line-height:2">
+          ♿ 障害者割引（手帳提示）　<strong style="color:var(--green-tx)">1割引</strong><br>
+          🚗 免許返納割引（証明書提示）　<strong style="color:var(--green-tx)">1割引</strong><br>
+          📍 遠距離割引（15,000円超の部分）　<strong style="color:var(--green-tx)">1割引</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6名割り勘シミュレーション -->
+    <div style="background:var(--navy);border-radius:var(--radius);padding:24px 28px;color:#fff">
+      <div style="font-size:15px;font-weight:500;margin-bottom:14px;color:var(--orange-lt)">💡 6名で割り勘するとお得なケースも</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:4px">4時間貸切 / 6名で割り勘</div>
+          <div style="font-size:22px;font-weight:700;color:var(--orange-lt);font-family:'Lato',sans-serif">約 5,373円<span style="font-size:13px;font-weight:400"> / 1名</span></div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px">普通車4名で割ると約5,460円／名</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:4px">6時間貸切 / 6名で割り勘</div>
+          <div style="font-size:22px;font-weight:700;color:var(--orange-lt);font-family:'Lato',sans-serif">約 8,060円<span style="font-size:13px;font-weight:400"> / 1名</span></div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px">普通車4名で割ると約8,190円／名</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;font-size:13px;color:var(--text-lt)">
+      ※ 上記料金は鹿児島県タクシー協会の公定料金に基づきます（令和5年8月1日現在）。<br>
+      ※ 施設入場料・高速代・フェリー代・駐車場代は別途必要です。<br>
+      ※ 2026年4月の運賃改定後の料金については、お問い合わせください。
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="al.flow.title">ご利用の流れ</div>
+      <div class="sec-sub" data-i18n="al.flow.sub">1台限定のため、お早めのご予約をおすすめします</div>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="fs-circle">📝</div>
+        <div class="fs-num">STEP 1</div>
+        <div class="fs-title" data-i18n="al.f1.title">ご予約</div>
+        <div class="fs-desc">電話・メール・フォームから日程・人数・用途をご連絡</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">📋</div>
+        <div class="fs-num">STEP 2</div>
+        <div class="fs-title" data-i18n="al.f2.title">内容確認</div>
+        <div class="fs-desc">担当者からご連絡。コース・時間・料金をご確認いただきます</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">🚐</div>
+        <div class="fs-num">STEP 3</div>
+        <div class="fs-title" data-i18n="al.f3.title">お迎え</div>
+        <div class="fs-desc">ご指定の場所・時間にお迎えに上がります</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">💳</div>
+        <div class="fs-num">STEP 4</div>
+        <div class="fs-title" data-i18n="al.f4.title">ご利用・お支払い</div>
+        <div class="fs-desc">ご到着後に現金・カード・QR決済でお支払い</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="al.faq.title">よくあるご質問</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> 何名から利用できますか？</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> 1名様からでもご利用いただけます。もちろん最大6名様まで対応しています。人数が少ない場合でも、広々とした車内でゆったりお過ごしいただけます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> 子ども連れでも大丈夫ですか？</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> はい、もちろん大歓迎です。チャイルドシートが必要な場合はご予約時にお知らせください。ベビーカーもトランクに収納可能です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> 当日の急な予約はできますか？</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> 1台限定のため、空き状況によってはご対応できない場合があります。特に観光シーズン・連休はお早めのご予約をおすすめします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> キャンセルはできますか？</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> ご予約のキャンセルはお電話にてご連絡ください。キャンセルポリシーについては予約時にご確認いただきます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> 小型車との違いは何ですか？</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> アルファードは広い車内と大型トランクが最大の特長です。6名まで乗車でき、大型スーツケースも複数積めます。また、乗り降りのしやすさやシートの快適性も高く、特別な日や遠方への移動に適しています。</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="background:var(--navy);padding:48px 1.5rem;text-align:center">
+  <div style="color:var(--orange-lt);font-size:13px;font-weight:500;margin-bottom:8px">🚐 アルファード貸切 予約受付中</div>
+  <div style="color:#fff;font-size:22px;font-weight:500;margin-bottom:10px" data-i18n="al.cta.title">ご予約・お見積りはお気軽にどうぞ</div>
+  <div style="color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:28px">
+    1台限定のため、ご希望日が決まりましたらお早めにご連絡ください
+  </div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="tel:0992580085" class="btn btn-primary">📞 099-258-0085（観光・予約専用）</a>
+    <a href="contact.html" class="btn btn-outline">✉️ フォームで問い合わせ</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="i18n.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

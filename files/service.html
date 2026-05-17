@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>営業所｜株式会社 山元交通</title>
+  <meta name="description" content="山元交通の営業所・配車センター。鹿児島市南郡元町。24時間配車受付。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .office-card {
+      background: #fff; border-radius: var(--radius);
+      border: 1px solid var(--gray-bd); overflow: hidden;
+      display: flex; flex-wrap: wrap;
+    }
+    .office-map {
+      width: 100%; height: 240px;
+      background: linear-gradient(135deg, var(--cream), var(--gray-lt));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; color: var(--text-lt);
+      position: relative;
+    }
+    .office-map-label {
+      position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+      background: var(--navy); color: #fff; font-size: 12px;
+      padding: 4px 14px; border-radius: 20px; white-space: nowrap;
+    }
+    .office-body { padding: 24px 28px; flex: 1; min-width: 260px; }
+    .office-name { font-size: 20px; font-weight: 500; color: var(--navy); margin-bottom: 16px; }
+    .office-rows { display: flex; flex-direction: column; gap: 10px; }
+    .office-row { display: flex; gap: 12px; font-size: 14px; }
+    .office-key { color: var(--text-lt); min-width: 72px; flex-shrink: 0; }
+    .office-val { color: var(--text); }
+    .office-val a { color: var(--orange); }
+
+    .tel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .tel-card {
+      background: #fff; border: 1px solid var(--gray-bd);
+      border-radius: var(--radius-sm); padding: 20px; text-align: center;
+    }
+    .tel-label { font-size: 12px; color: var(--text-lt); margin-bottom: 6px; }
+    .tel-num { font-size: 22px; font-weight: 700; color: var(--navy); font-family:'Lato',sans-serif; }
+    .tel-note { font-size: 12px; color: var(--text-lt); margin-top: 4px; }
+
+    .access-list { display: flex; flex-direction: column; gap: 14px; }
+    .access-item { display: flex; gap: 12px; align-items: flex-start; }
+    .access-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .access-text { font-size: 14px; color: var(--text-md); line-height: 1.7; }
+    .access-strong { font-weight: 500; color: var(--navy); }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">ホーム</a><span>/</span>
+      <span class="breadcrumb-cur">営業所</span>
+    </div>
+    <h1>営業所・アクセス</h1>
+    <p>24時間配車センターにてご対応しております。<br>お電話・GOアプリからいつでもご呼び出しいただけます。</p>
+  </div>
+</div>
+
+<!-- OFFICE -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title">本社・配車センター</div>
+    </div>
+    <div class="office-card">
+      <div class="office-map">
+        🗺️
+        <div class="office-map-label">鹿児島市 南郡元町24-6</div>
+      </div>
+      <div class="office-body">
+        <div class="office-name">株式会社 山元交通 本社</div>
+        <div class="office-rows">
+          <div class="office-row">
+            <span class="office-key">住所</span>
+            <span class="office-val">〒890-0073 鹿児島県鹿児島市南郡元町24-6</span>
+          </div>
+          <div class="office-row">
+            <span class="office-key">配車センター</span>
+            <span class="office-val"><a href="tel:0992555555">099-255-5555</a>（24時間365日）</span>
+          </div>
+          <div class="office-row">
+            <span class="office-key">観光・予約</span>
+            <span class="office-val"><a href="tel:0992580085">099-258-0085</a></span>
+          </div>
+          <div class="office-row">
+            <span class="office-key">メール</span>
+            <span class="office-val"><a href="mailto:info@yamamoto-koutsuu.jp">info@yamamoto-koutsuu.jp</a></span>
+          </div>
+          <div class="office-row">
+            <span class="office-key">営業時間</span>
+            <span class="office-val">配車センター 24時間／年中無休</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <a href="https://maps.google.com/?q=鹿児島市南郡元町24-6" target="_blank" rel="noopener" class="btn btn-navy">
+        📍 Google マップで開く
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TEL -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title">お電話でのご連絡</div>
+    </div>
+    <div class="tel-grid">
+      <div class="tel-card">
+        <div class="tel-label">配車センター（24時間）</div>
+        <div class="tel-num"><a href="tel:0992555555" style="color:var(--navy)">099-255-5555</a></div>
+        <div class="tel-note">日常のご利用・急ぎの配車</div>
+      </div>
+      <div class="tel-card">
+        <div class="tel-label">観光・予約専用</div>
+        <div class="tel-num"><a href="tel:0992580085" style="color:var(--navy)">099-258-0085</a></div>
+        <div class="tel-note">観光コース・空港送迎・クルーズ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="section section-gray">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title">アクセス方法</div>
+    </div>
+    <div class="access-list">
+      <div class="access-item">
+        <div class="access-icon">🚃</div>
+        <div class="access-text">
+          <div class="access-strong">鹿児島中央駅から</div>
+          タクシーで約10〜15分程度。市電でお越しの方は郡元電停が最寄りです。
+        </div>
+      </div>
+      <div class="access-item">
+        <div class="access-icon">✈️</div>
+        <div class="access-text">
+          <div class="access-strong">鹿児島空港から</div>
+          高速バスで鹿児島中央駅へ（約45分）、その後タクシーをご利用ください。
+        </div>
+      </div>
+      <div class="access-item">
+        <div class="access-icon">🚗</div>
+        <div class="access-text">
+          <div class="access-strong">お車でお越しの方</div>
+          鹿児島市南郡元町24-6。お電話にてご確認ください。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="i18n.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

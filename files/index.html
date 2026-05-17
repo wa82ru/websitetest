@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鹿児島のタクシー｜株式会社 山元交通</title>
+  <meta name="description" content="鹿児島市のタクシー会社、山元交通。日常のお出かけ・空港送迎・観光タクシー・クルーズ船対応まで。24時間配車センター 099-255-5555">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* HERO */
+    .hero {
+      background: var(--navy-dk);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle at 70% 50%, rgba(232,146,10,0.08) 0%, transparent 60%),
+                        repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 40px);
+    }
+    .hero-inner {
+      max-width: 1080px; margin: 0 auto;
+      padding: 56px 1.5rem 0;
+      display: flex; gap: 2.5rem;
+      align-items: flex-end; flex-wrap: wrap;
+      position: relative;
+    }
+    .hero-text { flex: 1; min-width: 280px; padding-bottom: 56px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(232,146,10,0.2);
+      border: 1px solid rgba(232,146,10,0.45);
+      color: var(--orange-lt);
+      font-size: 12px; padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 30px; font-weight: 500;
+      color: #fff; line-height: 1.55;
+      margin-bottom: 16px; letter-spacing: 0.01em;
+    }
+    .hero h1 em { color: var(--orange-lt); font-style: normal; }
+    .hero-desc {
+      color: rgba(255,255,255,0.72);
+      font-size: 14px; line-height: 1.9;
+      margin-bottom: 28px;
+    }
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .hero-card {
+      background: #fff; border-radius: 16px 16px 0 0;
+      padding: 26px 24px 32px;
+      min-width: 240px; width: 290px;
+      flex-shrink: 0;
+    }
+    .hero-card-label { font-size: 12px; color: var(--text-lt); margin-bottom: 10px; }
+    .hero-tel-big {
+      font-size: 28px; font-weight: 700;
+      color: var(--orange);
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 4px; font-family: 'Lato', sans-serif;
+    }
+    .hero-tel-note { font-size: 11px; color: var(--text-lt); margin-bottom: 16px; }
+    .hero-chips { display: flex; flex-direction: column; gap: 8px; }
+    .hero-chip {
+      background: var(--gray-lt); border-radius: 6px;
+      padding: 9px 12px; font-size: 13px; color: var(--navy);
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    /* NEW BANNER */
+    .new-banner {
+      background: var(--orange); padding: 11px 0; overflow: hidden;
+    }
+    .new-banner-scroll {
+      display: flex; gap: 32px; align-items: center;
+      padding: 0 1.5rem; overflow-x: auto;
+    }
+    .new-banner-scroll::-webkit-scrollbar { display: none; }
+    .nb-label {
+      background: #fff; color: var(--orange);
+      font-size: 11px; font-weight: 700;
+      padding: 2px 10px; border-radius: 3px;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .nb-item {
+      color: #fff; font-size: 13px; white-space: nowrap;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nb-dot { width: 4px; height: 4px; background: rgba(255,255,255,0.6); border-radius: 50%; flex-shrink: 0; }
+
+    /* SERVICE CARDS */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .svc-card { background: #fff; border-radius: var(--radius); border: 1px solid var(--gray-bd); overflow: hidden; }
+    .svc-img {
+      height: 140px; display: flex; align-items: center;
+      justify-content: center; font-size: 52px;
+    }
+    .svc-img-kankou { background: linear-gradient(135deg, #d9edd5, #b8dab3); }
+    .svc-img-cruise  { background: linear-gradient(135deg, #cfe0f0, #a8c8e8); }
+    .svc-img-daily   { background: linear-gradient(135deg, #ede8d8, #ddd5c0); }
+    .svc-img-senior  { background: linear-gradient(135deg, #fce8ee, #f5c8d4); }
+    .svc-img-airport { background: linear-gradient(135deg, #e0e8f5, #c0ccec); }
+    .svc-img-biz     { background: linear-gradient(135deg, #e4e4e4, #cacaca); }
+    .svc-body { padding: 18px 20px; }
+    .svc-badges { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+    .svc-body h3 { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 7px; }
+    .svc-body p  { font-size: 13px; color: var(--text-md); line-height: 1.7; }
+    .svc-footer {
+      border-top: 1px solid var(--gray-bd);
+      padding: 11px 20px; background: #faf8f5;
+    }
+    .svc-link { font-size: 13px; color: var(--orange); font-weight: 500; }
+    a.svc-card { transition: transform 0.15s, box-shadow 0.15s; }
+    a.svc-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+
+    /* STATS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px;
+    }
+    .stat-card {
+      text-align: center; padding: 24px 16px;
+      border: 1px solid var(--gray-bd); border-radius: var(--radius);
+    }
+    .stat-num {
+      font-size: 32px; font-weight: 700;
+      color: var(--orange); line-height: 1;
+      font-family: 'Lato', sans-serif;
+    }
+    .stat-unit { font-size: 14px; font-weight: 400; }
+    .stat-label { font-size: 13px; color: var(--text-md); margin-top: 8px; }
+
+    /* USER SCENE */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .scene-card {
+      background: #fff; border: 1px solid var(--gray-bd);
+      border-radius: var(--radius); padding: 20px;
+    }
+    .scene-icon { font-size: 28px; margin-bottom: 10px; }
+    .scene-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+    .scene-desc  { font-size: 13px; color: var(--text-md); line-height: 1.7; }
+
+    /* NEWS */
+    .news-row {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 14px 0; border-bottom: 1px solid var(--gray-bd);
+    }
+    .news-date { font-size: 12px; color: var(--text-lt); min-width: 78px; padding-top: 2px; }
+    .news-text { font-size: 14px; color: var(--text); }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background: var(--navy);
+      padding: 48px 1.5rem; text-align: center;
+    }
+    .cta-strip h2 { color: #fff; font-size: 22px; font-weight: 500; margin-bottom: 10px; }
+    .cta-strip p  { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 28px; }
+    .cta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px; max-width: 700px; margin: 0 auto;
+    }
+    .cta-box {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: var(--radius); padding: 20px;
+    }
+    .cta-box-icon { font-size: 22px; margin-bottom: 8px; }
+    .cta-box-title { color: #fff; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+    .cta-box-val { color: var(--orange-lt); font-size: 20px; font-weight: 500; }
+    .cta-box-note { color: rgba(255,255,255,0.45); font-size: 11px; margin-top: 4px; }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag" data-i18n="hero.tag">🌟 鹿児島の移動のパートナー</div>
+      <h1 data-i18n="hero.h1">いつでも、<em>だれでも</em>、<br>安心して使えるタクシーへ。</h1>
+      <p class="hero-desc">
+        日常のお出かけから空港送迎・観光案内・クルーズ船の寄港地観光まで。<br>
+        2026年の鹿児島に求められるサービスをお届けします。
+      </p>
+      <div class="hero-btns">
+        <a href="kankou.html" class="btn btn-primary" data-i18n="hero.btn1">観光プランを見る</a>
+        <a href="ryoukin.html" class="btn btn-outline" data-i18n="hero.btn2" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8)">料金を確認する</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label" data-i18n="hero.card.label">今すぐ配車のご依頼</div>
+      <div class="hero-tel-big"><span>📞</span><a href="tel:0992555555" style="color:var(--orange)">099-255-5555</a></div>
+      <div class="hero-tel-note" data-i18n="hero.card.note">配車センター / 24時間365日受付</div>
+      <div class="hero-chips">
+        <div class="hero-chip" data-i18n="hero.chip1">📱 GOアプリでも呼べます</div>
+        <div class="hero-chip" data-i18n="hero.chip2">💳 キャッシュレス全車対応</div>
+        <div class="hero-chip" data-i18n="hero.chip3">🌐 多言語対応ドライバー準備中</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW SERVICES BANNER -->
+<div class="new-banner">
+  <div class="new-banner-scroll">
+    <span class="nb-label" data-i18n="banner.new">2026 NEW</span>
+    <div class="nb-item"><span class="nb-dot"></span><span data-i18n="banner.item1">クルーズ船寄港地 専用タクシーツアー</span></div>
+    <div class="nb-item"><span class="nb-dot"></span><span data-i18n="banner.item2">高齢者・通院サポートプラン</span></div>
+    <div class="nb-item"><span class="nb-dot"></span><span data-i18n="banner.item3">時間指定予約配車</span></div>
+    <div class="nb-item"><span class="nb-dot"></span><span data-i18n="banner.item4">多言語対応ドライバー育成中</span></div>
+    <div class="nb-item"><span class="nb-dot"></span><span data-i18n="banner.item5">ライドシェア連携 検討中</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="svc.title">サービス一覧</div>
+      <div class="sec-sub" data-i18n="svc.sub">日常から特別なシーンまで、幅広くご対応します</div>
+    </div>
+    <div class="svc-grid">
+      <a href="kankou.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
+        <div class="svc-img svc-img-kankou">🌋</div>
+        <div class="svc-body">
+          <div class="svc-badges"><span class="badge badge-orange">人気</span></div>
+          <h3 data-i18n="svc1.title">観光タクシー</h3>
+          <p data-i18n="svc1.desc">桜島・指宿・霧島・知覧など鹿児島の名所をプロドライバーがご案内。アルファードでゆったり巡れます。</p>
+        </div>
+        <div class="svc-footer"><span class="svc-link" data-i18n="svc1.link">コースを見る →</span></div>
+      </a>
+      <a href="cruise.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
+        <div class="svc-img svc-img-cruise">⚓</div>
+        <div class="svc-body">
+          <div class="svc-badges"><span class="badge badge-label">注目</span><span class="badge badge-green">新設</span></div>
+          <h3 data-i18n="svc2.title">クルーズ船 寄港地ツアー</h3>
+          <p data-i18n="svc2.desc">マリンポートかごしまから出発。限られた時間で鹿児島を全力で楽しむ専用プランです。</p>
+        </div>
+        <div class="svc-footer"><span class="svc-link" data-i18n="svc2.link">プランを見る →</span></div>
+      </a>
+      <a href="ryoukin.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
+        <div class="svc-img svc-img-daily">🏙️</div>
+        <div class="svc-body">
+          <div class="svc-badges"><span class="badge badge-label">定番</span></div>
+          <h3 data-i18n="svc3.title">日常のご利用</h3>
+          <p data-i18n="svc3.desc">通勤・買い物・お出かけなど、毎日の移動をサポート。GOアプリ・電話でいつでも呼べます。</p>
+        </div>
+        <div class="svc-footer"><span class="svc-link" data-i18n="svc3.link">料金を見る →</span></div>
+      </a>
+      <a href="contact.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
+        <div class="svc-img svc-img-senior">👴</div>
+        <div class="svc-body">
+          <div class="svc-badges"><span class="badge badge-green">注力中</span></div>
+          <h3 data-i18n="svc4.title">高齢者・通院サポート</h3>
+          <p data-i18n="svc4.desc">定期的な通院・買い物のお手伝い。免許返納された方への割引も実施予定です。</p>
+        </div>
+        <div class="svc-footer"><span class="svc-link" data-i18n="svc4.link">問い合わせる →</span></div>
+      </a>
+      <a href="contact.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
+        <div class="svc-img svc-img-airport">✈️</div>
+        <div class="svc-body">
+          <div class="svc-badges"><span class="badge badge-label">おすすめ</span></div>
+          <h3 data-i18n="svc5.title">空港・駅 送迎</h3>
+          <p data-i18n="svc5.desc">鹿児島空港・鹿児島中央駅への送迎。時間指定予約で安心してお任せください。</p>
+        </div>
+        <div class="svc-footer"><span class="svc-link" data-i18n="svc5.link">予約する →</span></div>
+      </a>
+      <a href="contact.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
+        <div class="svc-img svc-img-biz">🏢</div>
+        <div class="svc-body">
+          <div class="svc-badges"><span class="badge badge-label">法人</span></div>
+          <h3 data-i18n="svc6.title">法人・ビジネス利用</h3>
+          <p data-i18n="svc6.desc">得意先訪問・空港送迎など、ビジネスシーンでの定期ご利用も承ります。</p>
+        </div>
+        <div class="svc-footer"><span class="svc-link" data-i18n="svc4.link">問い合わせる →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="stats.title">山元交通について</div>
+      <div class="sec-sub" data-i18n="stats.sub">鹿児島で積み重ねてきた実績と信頼</div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">地域<span class="stat-unit"></span></div>
+        <div class="stat-label">に根ざしたタクシー</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">88<span class="stat-unit"> 名</span></div>
+        <div class="stat-label">スタッフ数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">24<span class="stat-unit"> 時間</span></div>
+        <div class="stat-label">配車センター受付</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">全車<span class="stat-unit"></span></div>
+        <div class="stat-label">キャッシュレス対応</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USER SCENES -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="scene.title">こんな方にご利用いただいています</div>
+      <div class="sec-sub" data-i18n="scene.sub">どんなシーンでも山元交通がそばに</div>
+    </div>
+    <div class="scene-grid">
+      <div class="scene-card">
+        <div class="scene-icon">👵</div>
+        <div class="scene-title" data-i18n="scene1.title">高齢の方・免許返納された方</div>
+        <div class="scene-desc" data-i18n="scene1.desc">通院・買い物など毎日の移動を丁寧にサポート。慣れ親しんだドライバーがお迎えします。</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-icon">🗾</div>
+        <div class="scene-title" data-i18n="scene2.title">鹿児島を観光したい方</div>
+        <div class="scene-desc" data-i18n="scene2.desc">桜島・指宿・霧島など、鹿児島を知り尽くしたドライバーがご案内します。</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-icon">🚢</div>
+        <div class="scene-title" data-i18n="scene3.title">クルーズ船でお越しの方</div>
+        <div class="scene-desc" data-i18n="scene3.desc">寄港中の数時間を最大活用。乗船時間に合わせたコース設計で安心してお楽しみいただけます。</div>
+      </div>
+      <div class="scene-card">
+        <div class="scene-icon">🌏</div>
+        <div class="scene-title" data-i18n="scene4.title">外国からのお客様</div>
+        <div class="scene-desc" data-i18n="scene4.desc">多言語対応を順次拡充中。翻訳アプリを使った対応も可能です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="news.title">お知らせ</div>
+    </div>
+    <div class="news-row">
+      <span class="news-date">2026/04/01</span>
+      <span class="badge badge-label" style="flex-shrink:0">料金改定</span>
+      <span class="news-text">運賃改定に伴いタクシー料金を改定しました。</span>
+    </div>
+    <div class="news-row">
+      <span class="news-date">2026/03/01</span>
+      <span class="badge badge-green" style="flex-shrink:0">新サービス</span>
+      <span class="news-text">クルーズ船寄港地専用タクシーツアーを開始しました。</span>
+    </div>
+    <div class="news-row">
+      <span class="news-date">2024/09/19</span>
+      <span class="badge badge-label" style="flex-shrink:0">決済</span>
+      <span class="news-text">全車両にキャッシュレス端末（ペイキャス）を導入しました。</span>
+    </div>
+    <div class="news-row">
+      <span class="news-date">2023/01/31</span>
+      <span class="badge badge-label" style="flex-shrink:0">アプリ</span>
+      <span class="news-text">配車アプリ「GO」への対応を開始しました。</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <h2 data-i18n="cta.title">まずはお気軽にご連絡ください</h2>
+  <p data-i18n="cta.sub">電話・アプリ・ウェブフォーム、お好きな方法でどうぞ</p>
+  <div class="cta-grid">
+    <div class="cta-box">
+      <div class="cta-box-icon">📞</div>
+      <div class="cta-box-title">電話で配車</div>
+      <div class="cta-box-val"><a href="tel:0992555555" style="color:var(--orange-lt)">099-255-5555</a></div>
+      <div class="cta-box-note">24時間365日受付</div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-icon">📱</div>
+      <div class="cta-box-title">アプリで配車</div>
+      <div class="cta-box-val">GOアプリ</div>
+      <div class="cta-box-note">現在地から簡単呼び出し</div>
+    </div>
+    <div class="cta-box">
+      <div class="cta-box-icon">✉️</div>
+      <div class="cta-box-title">観光・送迎の予約</div>
+      <div class="cta-box-val"><a href="contact.html" style="color:var(--orange-lt)">お問い合わせ</a></div>
+      <div class="cta-box-note">事前予約を承ります</div>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="i18n.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

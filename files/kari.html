@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報｜株式会社 山元交通</title>
+<meta name="description" content="鹿児島市のタクシー会社・山元交通の採用ページ。未経験歓迎・GO配車対応・寮完備・二種免許取得支援あり。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+:root{
+  --navy:#0d2340;
+  --orange:#f08a24;
+  --cream:#f8f5ef;
+  --text:#222;
+  --gray:#666;
+  --line:#e5e5e5;
+  --radius:18px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Yu Gothic",sans-serif;
+  color:var(--text);
+  line-height:1.8;
+  background:#fff;
+}
+
+img{
+  max-width:100%;
+}
+
+a{
+  text-decoration:none;
+}
+
+.wrap{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+.section{
+  padding:80px 0;
+}
+
+.sec-title{
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:12px;
+  color:var(--navy);
+}
+
+.sec-sub{
+  color:var(--gray);
+  font-size:15px;
+}
+
+.hero{
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  padding:120px 0 100px;
+}
+
+.hero h1{
+  font-size:clamp(36px,6vw,62px);
+  line-height:1.2;
+  margin-bottom:20px;
+  font-weight:800;
+}
+
+.hero p{
+  font-size:18px;
+  max-width:700px;
+  color:rgba(255,255,255,.9);
+}
+
+.hero-badges{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.badge{
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+  padding:10px 16px;
+  border-radius:999px;
+  font-size:14px;
+  backdrop-filter:blur(8px);
+}
+
+.hero-btns{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:36px;
+}
+
+.btn{
+  padding:16px 28px;
+  border-radius:999px;
+  font-weight:700;
+  display:inline-block;
+}
+
+.btn-main{
+  background:var(--orange);
+  color:#fff;
+}
+
+.btn-sub{
+  border:1px solid rgba(255,255,255,.5);
+  color:#fff;
+}
+
+.reason-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+  margin-top:40px;
+}
+
+.reason-card{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px;
+  background:#fff;
+}
+
+.reason-icon{
+  font-size:34px;
+  margin-bottom:16px;
+}
+
+.reason-card h3{
+  margin-bottom:10px;
+  color:var(--navy);
+}
+
+.model-grid{
+  display:grid;
+  gap:26px;
+  margin-top:40px;
+}
+
+.model-card{
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+
+.model-top{
+  background:var(--navy);
+  color:#fff;
+  padding:28px;
+}
+
+.model-top h3{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.model-body{
+  padding:30px;
+}
+
+.model-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:18px 0;
+}
+
+.model-table td{
+  padding:10px;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+
+.salary{
+  font-size:42px;
+  font-weight:800;
+  color:var(--orange);
+  margin:14px 0;
+}
+
+.schedule{
+  background:var(--cream);
+}
+
+.schedule-box{
+  background:#fff;
+  border-radius:22px;
+  padding:30px;
+  margin-top:40px;
+  border:1px solid var(--line);
+}
+
+.schedule-days{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:10px;
+  margin-top:24px;
+}
+
+.day{
+  text-align:center;
+  border-radius:16px;
+  padding:18px 10px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.work{
+  background:#0d2340;
+  color:#fff;
+}
+
+.after{
+  background:#dce7f7;
+  color:#0d2340;
+}
+
+.off{
+  background:#f3f3f3;
+}
+
+.qa-list{
+  margin-top:40px;
+  display:grid;
+  gap:18px;
+}
+
+.qa{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:24px;
+}
+
+.qa-q{
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:10px;
+}
+
+.cta{
+  background:var(--navy);
+  color:#fff;
+  text-align:center;
+  padding:90px 0;
+}
+
+.cta h2{
+  font-size:40px;
+  margin-bottom:18px;
+}
+
+.cta p{
+  color:rgba(255,255,255,.8);
+  margin-bottom:34px;
+}
+
+.cta-btns{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.cta-btn{
+  padding:18px 34px;
+  border-radius:999px;
+  font-weight:700;
+}
+
+.cta-line{
+  background:#06C755;
+  color:#fff;
+}
+
+.cta-call{
+  background:#fff;
+  color:var(--navy);
+}
+
+footer{
+  padding:30px 0;
+  text-align:center;
+  color:#777;
+  font-size:13px;
+}
+
+@media(max-width:768px){
+
+  .section{
+    padding:60px 0;
+  }
+
+  .hero{
+    padding:90px 0 70px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .sec-title{
+    font-size:28px;
+  }
+
+  .salary{
+    font-size:34px;
+  }
+
+  .schedule-days{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cta h2{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="wrap">
+
+    <h1>
+      鹿児島で、<br>
+      “ちゃんと稼げる仕事”を。
+    </h1>
+
+    <p>
+      山元交通では、GOアプリ配車・観光需要・地域密着営業を軸に、
+      未経験からでも安定して働ける環境を整えています。
+    </p>
+
+    <div class="hero-badges">
+      <div class="badge">未経験歓迎</div>
+      <div class="badge">二種免許取得支援</div>
+      <div class="badge">GO配車対応</div>
+      <div class="badge">寮完備</div>
+      <div class="badge">女性活躍中</div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn btn-main">まずは見学してみる</a>
+      <a href="tel:0992580085" class="btn btn-sub">電話で相談する</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="sec-title">
+      山元交通が選ばれる理由
+    </div>
+
+    <div class="sec-sub">
+      「タクシーって大変そう」を変えていく環境づくりを進めています。
+    </div>
+
+    <div class="reason-grid">
+
+      <div class="reason-card">
+        <div class="reason-icon">📱</div>
+        <h3>GO配車対応</h3>
+        <p>
+          アプリ配車が増加中。未経験の方でもお客様を探しやすい環境です。
+        </p>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">🌋</div>
+        <h3>観光需要あり</h3>
+        <p>
+          鹿児島観光・空港送迎・クルーズ船対応など、通常営業以外の仕事もあります。
+        </p>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">🏠</div>
+        <h3>寮完備</h3>
+        <p>
+          Uターン・Iターン歓迎。県外からの転職も相談可能です。
+        </p>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">🎓</div>
+        <h3>未経験歓迎</h3>
+        <p>
+          二種免許取得支援あり。地理や接客も丁寧にサポートします。
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section schedule">
+  <div class="wrap">
+
+    <div class="sec-title">
+      隔日勤務って？
+    </div>
+
+    <div class="sec-sub">
+      「1日働いて、次の日休み」が基本。月12回前後の出勤スタイルです。
+    </div>
+
+    <div class="schedule-box">
+
+      <div class="schedule-days">
+        <div class="day work">月<br>勤務</div>
+        <div class="day after">火<br>明け休み</div>
+        <div class="day work">水<br>勤務</div>
+        <div class="day after">木<br>明け休み</div>
+        <div class="day work">金<br>勤務</div>
+        <div class="day off">土<br>公休</div>
+        <div class="day work">日<br>勤務</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="sec-title">
+      働き方モデル
+    </div>
+
+    <div class="sec-sub">
+      実際の働き方をイメージしやすいよう、モデルケースをご紹介します。
+    </div>
+
+    <div class="model-grid">
+
+      <div class="model-card">
+
+        <div class="model-top">
+          <h3>未経験スタート・40代男性</h3>
+          <p>前職：飲食業 → タクシードライバーへ転職</p>
+        </div>
+
+        <div class="model-body">
+
+          <div class="salary">
+            月収32万円
+          </div>
+
+          <table class="model-table">
+            <tr><td>勤務形態</td><td>隔日勤務（月12乗務）</td></tr>
+            <tr><td>勤務時間</td><td>7:00〜翌1:00</td></tr>
+            <tr><td>主な営業</td><td>GO配車・駅・繁華街</td></tr>
+          </table>
+
+          <p>
+            「最初は不安でしたが、GO配車が多く、
+            未経験でも営業しやすかったです。」
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="model-card">
+
+        <div class="model-top">
+          <h3>子育て中・女性ドライバー</h3>
+          <p>昼勤務中心で家庭と両立</p>
+        </div>
+
+        <div class="model-body">
+
+          <div class="salary">
+            月収21万円
+          </div>
+
+          <table class="model-table">
+            <tr><td>勤務形態</td><td>昼勤務</td></tr>
+            <tr><td>勤務時間</td><td>8:00〜16:00</td></tr>
+            <tr><td>休日</td><td>日曜相談可</td></tr>
+          </table>
+
+          <p>
+            「保育園の送迎と両立しながら働いています。
+            女性のお客様から安心感があると言われることも多いです。」
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="model-card">
+
+        <div class="model-top">
+          <h3>観光・空港送迎メイン</h3>
+          <p>観光案内・予約送迎中心</p>
+        </div>
+
+        <div class="model-body">
+
+          <div class="salary">
+            月収45万円
+          </div>
+
+          <table class="model-table">
+            <tr><td>主な業務</td><td>観光・クルーズ船・空港送迎</td></tr>
+            <tr><td>特徴</td><td>予約営業中心</td></tr>
+            <tr><td>必要スキル</td><td>接客・観光知識</td></tr>
+          </table>
+
+          <p>
+            「鹿児島を案内する仕事としてやりがいがあります。
+            リピーターのお客様も増えてきました。」
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="sec-title">
+      よくある質問
+    </div>
+
+    <div class="qa-list">
+
+      <div class="qa">
+        <div class="qa-q">
+          Q. 二種免許がなくても応募できますか？
+        </div>
+        <div class="qa-a">
+          はい。入社後に取得支援制度をご利用いただけます。
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="qa-q">
+          Q. 地理に詳しくないのですが大丈夫ですか？
+        </div>
+        <div class="qa-a">
+          GOアプリ・ナビ活用もあり、未経験から始めた乗務員も多数在籍しています。
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="qa-q">
+          Q. 女性でも働けますか？
+        </div>
+        <div class="qa-a">
+          はい。昼勤務中心など柔軟な働き方もご相談可能です。
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="qa-q">
+          Q. ノルマはありますか？
+        </div>
+        <div class="qa-a">
+          無理なノルマではなく、安全運転と接客を重視しています。
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+
+    <h2>
+      まずは見学だけでもOKです。
+    </h2>
+
+    <p>
+      「実際どんな雰囲気か見てみたい」<br>
+      そんなお問い合わせも歓迎しています。
+    </p>
+
+    <div class="cta-btns">
+      <a href="#" class="cta-btn cta-line">LINEで相談する</a>
+      <a href="tel:0992580085" class="cta-btn cta-call">
+        📞 099-258-0085
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 株式会社 山元交通
+</footer>
+
+</body>
+</html>

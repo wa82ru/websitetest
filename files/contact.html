@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ｜株式会社 山元交通</title>
+  <meta name="description" content="山元交通へのお問い合わせ。観光タクシー予約・クルーズ船ツアー・採用など。電話・メールフォームにてご連絡ください。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 32px;
+      align-items: start;
+    }
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-tel-box {
+      background: var(--navy); border-radius: var(--radius);
+      padding: 28px 24px; color: #fff; margin-bottom: 14px;
+    }
+    .ctb-label { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+    .ctb-num {
+      font-size: 28px; font-weight: 700;
+      color: var(--orange-lt); font-family:'Lato',sans-serif;
+      margin-bottom: 4px;
+    }
+    .ctb-num a { color: var(--orange-lt); }
+    .ctb-note { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+    .form-wrap {
+      background: #fff; border-radius: var(--radius);
+      border: 1px solid var(--gray-bd); padding: 28px;
+    }
+    .form-title { font-size: 17px; font-weight: 500; color: var(--navy); margin-bottom: 22px; }
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block; font-size: 13px; font-weight: 500;
+      color: var(--navy); margin-bottom: 6px;
+    }
+    .form-req {
+      background: var(--orange); color: #fff;
+      font-size: 10px; padding: 1px 6px; border-radius: 3px;
+      margin-left: 6px; vertical-align: middle;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 11px 14px;
+      border: 1px solid var(--gray-bd); border-radius: var(--radius-sm);
+      font-size: 14px; font-family: var(--font);
+      color: var(--text); background: #fff;
+      transition: border-color 0.15s;
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--orange);
+    }
+    .form-textarea { min-height: 130px; resize: vertical; }
+    .form-submit {
+      width: 100%; padding: 14px;
+      background: var(--orange); color: #fff;
+      border: none; border-radius: var(--radius-sm);
+      font-size: 15px; font-weight: 500;
+      font-family: var(--font); cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .form-submit:hover { opacity: 0.9; }
+    .form-note { font-size: 12px; color: var(--text-lt); margin-top: 10px; text-align: center; }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px; margin-bottom: 28px;
+    }
+    .type-card {
+      background: #fff; border: 1px solid var(--gray-bd);
+      border-radius: var(--radius-sm); padding: 16px;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .type-icon { font-size: 22px; flex-shrink: 0; }
+    .type-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 3px; }
+    .type-desc  { font-size: 12px; color: var(--text-lt); }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">ホーム</a><span>/</span>
+      <span class="breadcrumb-cur">お問い合わせ</span>
+    </div>
+    <h1 data-i18n="ct.hero.h1">お問い合わせ</h1>
+    <p>観光タクシーのご予約・クルーズ船ツアー・採用など、お気軽にご連絡ください。<br>急ぎの配車は 24時間配車センター（099-255-5555）まで直接お電話ください。</p>
+  </div>
+</div>
+
+<!-- TYPES -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="ct.types.title">お問い合わせの種類</div>
+    </div>
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="type-icon">🚕</div>
+        <div>
+          <div class="type-title" data-i18n="ct.t1.title">今すぐ配車</div>
+          <div class="type-desc" data-i18n="ct.t1.desc">24時間受付。お電話が最速です。</div>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">🌋</div>
+        <div>
+          <div class="type-title" data-i18n="ct.t2.title">観光タクシーの予約</div>
+          <div class="type-desc" data-i18n="ct.t2.desc">コース・日程のご相談もお気軽に。</div>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">⚓</div>
+        <div>
+          <div class="type-title" data-i18n="ct.t3.title">クルーズ船ツアーの予約</div>
+          <div class="type-desc" data-i18n="ct.t3.desc">寄港日・人数・コースをご連絡ください。</div>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">✈️</div>
+        <div>
+          <div class="type-title" data-i18n="ct.t4.title">空港・駅の送迎予約</div>
+          <div class="type-desc" data-i18n="ct.t4.desc">時間指定でのお迎えを承ります。</div>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">💼</div>
+        <div>
+          <div class="type-title" data-i18n="ct.t5.title">採用・見学</div>
+          <div class="type-desc" data-i18n="ct.t5.desc">ドライバー募集中。気軽にどうぞ。</div>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">📋</div>
+        <div>
+          <div class="type-title" data-i18n="ct.t6.title">その他のお問い合わせ</div>
+          <div class="type-desc" data-i18n="ct.t6.desc">何でもお気軽にご連絡ください。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT BODY -->
+<section class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+      <!-- LEFT: TEL -->
+      <div>
+        <div class="contact-tel-box">
+          <div class="ctb-label" data-i18n="ct.tel1.label">📞 配車センター（急ぎの配車・日常利用）</div>
+          <div class="ctb-num"><a href="tel:0992555555">099-255-5555</a></div>
+          <div class="ctb-note" data-i18n="ct.tel1.note">24時間 365日受付</div>
+        </div>
+        <div class="contact-tel-box">
+          <div class="ctb-label" data-i18n="ct.tel2.label">📞 観光・予約専用（観光タクシー・クルーズ・採用）</div>
+          <div class="ctb-num"><a href="tel:0992580085">099-258-0085</a></div>
+          <div class="ctb-note" data-i18n="ct.tel2.note">営業時間内にご対応いたします</div>
+        </div>
+        <div style="background:var(--cream);border-radius:var(--radius-sm);padding:16px;font-size:13px;color:var(--text-md);line-height:1.8">
+          <strong style="color:var(--navy)">メールでのご連絡</strong><br>
+          <a href="mailto:info@yamamoto-koutsuu.jp" style="color:var(--orange)">info@yamamoto-koutsuu.jp</a><br><br>
+          観光タクシーのご予約は、ご希望日の3日前までにご連絡いただけるとスムーズです。
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="form-wrap">
+        <div class="form-title" data-i18n="ct.form.title">メールフォーム</div>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label">お問い合わせの種類<span class="form-req">必須</span></label>
+            <select class="form-select" required>
+              <option value="">選択してください</option>
+              <option>観光タクシーの予約</option>
+              <option>クルーズ船ツアーの予約</option>
+              <option>空港・駅の送迎予約</option>
+              <option>法人利用の相談</option>
+              <option>採用・見学</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">お名前<span class="form-req">必須</span></label>
+            <input type="text" class="form-input" placeholder="山元 太郎" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">電話番号</label>
+            <input type="tel" class="form-input" placeholder="099-000-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">メールアドレス<span class="form-req">必須</span></label>
+            <input type="email" class="form-input" placeholder="example@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">ご希望日・人数</label>
+            <input type="text" class="form-input" placeholder="例: 2026年5月10日 / 4名">
+          </div>
+          <div class="form-group">
+            <label class="form-label">お問い合わせ内容<span class="form-req">必須</span></label>
+            <textarea class="form-textarea" placeholder="ご希望のコース・出発場所・乗船時間など、お気軽にお書きください。" required></textarea>
+          </div>
+          <button type="submit" class="form-submit" data-i18n="ct.form.submit">送信する</button>
+          <div class="form-note" data-i18n="ct.form.note">通常1〜2営業日以内にご返信いたします</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="i18n.js"></script>
+<script src="common.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  alert('お問い合わせありがとうございます。\n担当者よりご連絡いたします。\n\n急ぎの場合は 099-255-5555 までお電話ください。');
+}
+</script>
+</body>
+</html>

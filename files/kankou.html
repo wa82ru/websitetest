@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>観光タクシー｜株式会社 山元交通</title>
+  <meta name="description" content="桜島・指宿・霧島・知覧など鹿児島の名所をプロドライバーがご案内。山元交通の観光タクシーコース一覧。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+    .course-card { background: #fff; border-radius: var(--radius); border: 1px solid var(--gray-bd); overflow: hidden; }
+    .course-map {
+      height: 130px; display: flex; align-items: center;
+      justify-content: center; font-size: 48px;
+    }
+    .map-sakurajima { background: linear-gradient(135deg, #c8d8e8, #9ab8d0); }
+    .map-ibusuki    { background: linear-gradient(135deg, #c8e0cc, #a0c8a8); }
+    .map-kirishima  { background: linear-gradient(135deg, #d4d0c8, #b8b4a8); }
+    .map-chiran     { background: linear-gradient(135deg, #e0d4c8, #c8b8a8); }
+    .map-cruise     { background: linear-gradient(135deg, #c0d0e8, #9ab0cc); }
+    .map-custom     { background: linear-gradient(135deg, #e8e0d4, #d0c8b8); }
+    .course-body { padding: 18px 20px; }
+    .course-badge-row { display: flex; gap: 6px; margin-bottom: 10px; }
+    .course-body h3 { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
+    .spot-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .spot-item { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--text-md); }
+    .spot-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+    .course-footer {
+      border-top: 1px solid var(--gray-bd);
+      padding: 14px 20px; background: #faf8f5;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .price-lbl { font-size: 11px; color: var(--text-lt); margin-bottom: 2px; }
+    .price-val { font-size: 18px; font-weight: 700; color: var(--navy); font-family: 'Lato', sans-serif; }
+    .price-sub { font-size: 11px; color: var(--text-lt); }
+
+    .time-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .time-table th, .time-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-bd); }
+    .time-table th { background: var(--cream); color: var(--navy); font-weight: 500; text-align: left; }
+    .time-table td { color: var(--text-md); }
+
+    .incl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .incl-box { background: #fff; border: 1px solid var(--gray-bd); border-radius: var(--radius-sm); padding: 16px; }
+    .incl-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+    .incl-list li { font-size: 13px; color: var(--text-md); line-height: 1.8; list-style: none; padding-left: 16px; position: relative; }
+    .incl-list li::before { content: '✓'; position: absolute; left: 0; color: var(--green-tx); font-size: 12px; }
+    .incl-list.excl li::before { content: '✗'; color: #cc4444; }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0; position: relative;
+    }
+    .flow-step { text-align: center; padding: 0 10px; position: relative; }
+    .flow-step:not(:last-child)::after {
+      content: '▶'; position: absolute; right: -6px; top: 18px;
+      color: var(--orange); font-size: 14px;
+    }
+    .fs-circle {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--orange-bg); border: 2px solid var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 8px; font-size: 18px;
+    }
+    .fs-num { font-size: 10px; color: var(--orange); font-weight: 700; margin-bottom: 3px; }
+    .fs-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+    .fs-desc { font-size: 12px; color: var(--text-lt); line-height: 1.6; }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">ホーム</a><span>/</span>
+      <span class="breadcrumb-cur">観光タクシー</span>
+    </div>
+    <h1 data-i18n="k.hero.h1">観光タクシー</h1>
+    <p data-i18n="k.hero.desc">鹿児島を知り尽くしたプロドライバーが、あなただけの旅をご案内。<br>桜島・指宿・霧島・知覧など、鹿児島の名所をドア・ツー・ドアで巡れます。</p>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="k.courses.title">モデルコース</div>
+      <div class="sec-sub" data-i18n="k.courses.sub">記載はあくまで一例。ご希望に合わせてオーダーメイドも承ります。</div>
+    </div>
+    <div class="course-grid">
+
+      <div class="course-card">
+        <div class="course-map map-sakurajima">🌋</div>
+        <div class="course-body">
+          <div class="course-badge-row">
+            <span class="badge badge-orange">人気No.1</span>
+            <span class="badge badge-label">最大4時間</span>
+          </div>
+          <h3 data-i18n="k.c1.title">桜島コース</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>鹿児島中央駅 → 桜島フェリーターミナル（約30分）</div>
+            <div class="spot-item"><div class="spot-dot"></div>桜島フェリー乗船（15分）</div>
+            <div class="spot-item"><div class="spot-dot"></div>溶岩なぎさ公園・湯之平展望所</div>
+            <div class="spot-item"><div class="spot-dot"></div>お好みで天文館・仙巌園も追加可</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="price-lbl">小型（4名まで）</div>
+            <div class="price-val">¥21,800〜</div>
+            <div class="price-sub">アルファード ¥32,200〜</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-map map-ibusuki">♨️</div>
+        <div class="course-body">
+          <div class="course-badge-row">
+            <span class="badge badge-label">温泉</span>
+            <span class="badge badge-label">最大6時間</span>
+          </div>
+          <h3 data-i18n="k.c2.title">指宿コース</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>鹿児島市内 → 指宿（約70分）</div>
+            <div class="spot-item"><div class="spot-dot"></div>砂むし温泉・池田湖</div>
+            <div class="spot-item"><div class="spot-dot"></div>長崎鼻・薩摩半島の絶景</div>
+            <div class="spot-item"><div class="spot-dot"></div>※週末は混雑するため余裕をもって</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="price-lbl">小型（4名まで）</div>
+            <div class="price-val">¥32,700〜</div>
+            <div class="price-sub">アルファード ¥48,300〜</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-map map-chiran">🎌</div>
+        <div class="course-body">
+          <div class="course-badge-row">
+            <span class="badge badge-label">歴史</span>
+            <span class="badge badge-label">最大6時間</span>
+          </div>
+          <h3 data-i18n="k.c3.title">知覧コース</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>鹿児島市内 → 知覧（約70分）</div>
+            <div class="spot-item"><div class="spot-dot"></div>知覧特攻平和会館（歴史遺産）</div>
+            <div class="spot-item"><div class="spot-dot"></div>知覧武家屋敷庭園（国の名勝）</div>
+            <div class="spot-item"><div class="spot-dot"></div>帰路に天文館で薩摩料理も</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="price-lbl">小型（4名まで）</div>
+            <div class="price-val">¥32,700〜</div>
+            <div class="price-sub">アルファード ¥48,300〜</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-map map-kirishima">🏔️</div>
+        <div class="course-body">
+          <div class="course-badge-row">
+            <span class="badge badge-label">自然</span>
+            <span class="badge badge-label">最大6時間</span>
+          </div>
+          <h3 data-i18n="k.c4.title">霧島コース</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>鹿児島空港 → 霧島神宮（約20分）</div>
+            <div class="spot-item"><div class="spot-dot"></div>霧島神宮・霧島温泉郷</div>
+            <div class="spot-item"><div class="spot-dot"></div>丸尾滝・えびの高原</div>
+            <div class="spot-item"><div class="spot-dot"></div>空港発着にも最適なコース</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="price-lbl">小型（4名まで）</div>
+            <div class="price-val">¥32,700〜</div>
+            <div class="price-sub">アルファード ¥48,300〜</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-map map-cruise">⚓</div>
+        <div class="course-body">
+          <div class="course-badge-row">
+            <span class="badge badge-label">クルーズ専用</span>
+            <span class="badge badge-green">新設</span>
+          </div>
+          <h3 data-i18n="k.c5.title">クルーズ船 寄港地ツアー</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>マリンポートかごしまから出発</div>
+            <div class="spot-item"><div class="spot-dot"></div>桜島・市内・知覧など選べるコース</div>
+            <div class="spot-item"><div class="spot-dot"></div>乗船時間に合わせてコース設計</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="price-lbl">参考料金</div>
+            <div class="price-val">¥12,000〜</div>
+            <div class="price-sub">滞在時間・コースにより変動</div>
+          </div>
+          <a href="cruise.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">詳細を見る</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-map map-custom">✨</div>
+        <div class="course-body">
+          <div class="course-badge-row">
+            <span class="badge badge-label">完全オーダー</span>
+          </div>
+          <h3 data-i18n="k.c6.title">オーダーメイドコース</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>行きたい場所・時間をご相談ください</div>
+            <div class="spot-item"><div class="spot-dot"></div>グループ・ファミリーにも対応</div>
+            <div class="spot-item"><div class="spot-dot"></div>アルファード（6名まで）も選択可</div>
+            <div class="spot-item"><div class="spot-dot"></div>空港・ホテル・駅からの出発OK</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="price-lbl">お見積り</div>
+            <div class="price-val">要相談</div>
+            <div class="price-sub">まずはお気軽に</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">相談する</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIMES TABLE -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="k.time.title">主要スポットまでの所要時間</div>
+      <div class="sec-sub" data-i18n="k.time.sub">交通状況により変動します。余裕をもってご計画ください。</div>
+    </div>
+    <table class="time-table">
+      <thead>
+        <tr>
+          <th>出発地</th>
+          <th>目的地</th>
+          <th>所要時間（目安）</th>
+          <th>備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>鹿児島中央駅</td><td>桜島フェリー乗り場</td><td>約30分</td><td>フェリー待ち時間は別途</td></tr>
+        <tr><td>鹿児島中央駅</td><td>指宿</td><td>約70分</td><td>週末は混雑しやすい</td></tr>
+        <tr><td>鹿児島中央駅</td><td>知覧</td><td>約70分</td><td></td></tr>
+        <tr><td>鹿児島空港</td><td>鹿児島市内</td><td>約45分</td><td>高速代別途</td></tr>
+        <tr><td>鹿児島空港</td><td>霧島神宮</td><td>約20分</td><td></td></tr>
+        <tr><td>マリンポートかごしま</td><td>桜島フェリー乗り場</td><td>約30分</td><td>クルーズ船のお客様向け</td></tr>
+        <tr><td>鹿児島市内</td><td>天文館</td><td>約10分〜</td><td>メーター制</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- INCLUDES / EXCLUDES -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="k.incl.title">料金に含まれるもの・含まれないもの</div>
+    </div>
+    <div class="incl-grid">
+      <div class="incl-box">
+        <div class="incl-title">✓ 料金に含まれるもの</div>
+        <ul class="incl-list">
+          <li>タクシー乗車料金（メーター制）</li>
+          <li>ドライバーによるご案内</li>
+          <li>待ち時間（観光中）</li>
+        </ul>
+      </div>
+      <div class="incl-box">
+        <div class="incl-title">✗ 別途必要なもの</div>
+        <ul class="incl-list excl">
+          <li>施設入場料</li>
+          <li>高速道路代金</li>
+          <li>フェリー運賃</li>
+          <li>駐車場代・お客様のお食事代</li>
+          <li>鹿児島市外発着の場合の加算</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="k.flow.title">ご利用の流れ</div>
+    </div>
+    <div class="flow-row">
+      <div class="flow-step">
+        <div class="fs-circle">📝</div>
+        <div class="fs-num">STEP 1</div>
+        <div class="fs-title" data-i18n="k.f1.title">事前予約</div>
+        <div class="fs-desc" data-i18n="k.f1.desc">電話・メール・フォームからご希望をお知らせください</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">🚕</div>
+        <div class="fs-num">STEP 2</div>
+        <div class="fs-title" data-i18n="k.f2.title">お迎え</div>
+        <div class="fs-desc" data-i18n="k.f2.desc">ホテル・駅・空港などご指定の場所にお迎えします</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">🗺️</div>
+        <div class="fs-num">STEP 3</div>
+        <div class="fs-title" data-i18n="k.f3.title">観光スタート</div>
+        <div class="fs-desc" data-i18n="k.f3.desc">ベテランドライバーがご案内。途中変更もOK</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">💳</div>
+        <div class="fs-num">STEP 4</div>
+        <div class="fs-title" data-i18n="k.f4.title">お支払い</div>
+        <div class="fs-desc" data-i18n="k.f4.desc">現金・カード・QR決済に対応しています</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--navy);padding:44px 1.5rem;text-align:center">
+  <div style="color:#fff;font-size:20px;font-weight:500;margin-bottom:10px" data-i18n="k.cta.title">観光のご予約・お問い合わせ</div>
+  <div style="color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:24px" data-i18n="k.cta.sub">コースのカスタマイズ・お見積りもお気軽にどうぞ</div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="tel:0992580085" class="btn btn-primary" data-i18n="k.cta.tel">📞 099-258-0085（観光・予約専用）</a>
+    <a href="contact.html" class="btn btn-outline" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8)" data-i18n="k.cta.mail">✉️ メールで問い合わせ</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="i18n.js"></script>
+<script src="common.js"></script>
+</body>
+</html>

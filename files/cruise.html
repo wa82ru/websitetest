@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クルーズ船 寄港地タクシーツアー｜株式会社 山元交通</title>
+  <meta name="description" content="鹿児島マリンポートから出発。クルーズ船のお客様向け寄港地タクシーツアー。桜島・市内・知覧コース。乗船時間に合わせた設計。">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .stat-row {
+      display: flex; gap: 16px; flex-wrap: wrap;
+    }
+    .stat-mini {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm); padding: 14px 20px;
+    }
+    .stat-mini-num { font-size: 22px; font-weight: 700; color: var(--orange-lt); font-family:'Lato',sans-serif; }
+    .stat-mini-lbl { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 3px; }
+
+    .point-bar {
+      background: var(--orange); padding: 12px 1.5rem;
+    }
+    .point-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; gap: 20px; flex-wrap: wrap; align-items: center;
+    }
+    .pt { display: flex; align-items: center; gap: 7px; color: #fff; font-size: 13px; font-weight: 500; }
+    .pt-chk {
+      width: 16px; height: 16px; border-radius: 50%;
+      background: rgba(255,255,255,0.28);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; flex-shrink: 0;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .course-card { background: #fff; border-radius: var(--radius); border: 1px solid var(--gray-bd); overflow: hidden; }
+    .course-top { padding: 20px 20px 14px; }
+    .course-badge-row { display: flex; gap: 6px; margin-bottom: 12px; align-items: center; }
+    .course-card h3 { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
+    .spot-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 4px; }
+    .spot-item { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--text-md); }
+    .spot-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+    .course-footer {
+      border-top: 1px solid var(--gray-bd);
+      padding: 14px 20px; background: #faf8f5;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .pval { font-size: 20px; font-weight: 700; color: var(--navy); font-family:'Lato',sans-serif; }
+    .psub { font-size: 11px; color: var(--text-lt); }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0; position: relative;
+    }
+    .flow-step { text-align: center; padding: 0 10px; position: relative; }
+    .flow-step:not(:last-child)::after {
+      content: '▶'; position: absolute; right: -6px; top: 18px;
+      color: var(--orange); font-size: 14px;
+    }
+    .fs-circle {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--orange-bg); border: 2px solid var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 8px; font-size: 20px;
+    }
+    .fs-num   { font-size: 10px; color: var(--orange); font-weight: 700; margin-bottom: 3px; }
+    .fs-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 5px; }
+    .fs-desc  { font-size: 12px; color: var(--text-lt); line-height: 1.6; }
+
+    .faq-item { border: 1px solid var(--gray-bd); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 10px; }
+    .faq-q { background: var(--cream); padding: 13px 16px; font-size: 14px; font-weight: 500; color: var(--navy); display: flex; gap: 10px; }
+    .faq-q-mark { color: var(--orange); flex-shrink: 0; }
+    .faq-a { padding: 13px 16px; font-size: 13px; color: var(--text-md); line-height: 1.8; display: flex; gap: 10px; }
+    .faq-a-mark { color: var(--navy); font-weight: 700; flex-shrink: 0; }
+
+    .lang-box {
+      background: var(--blue-lt); border-radius: var(--radius);
+      padding: 24px 28px; display: flex; gap: 16px; align-items: flex-start;
+    }
+    .lang-icon { font-size: 32px; flex-shrink: 0; }
+    .lang-body h3 { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
+    .lang-body p  { font-size: 13px; color: var(--text-md); line-height: 1.8; }
+    .lang-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .lang-chip { background: #fff; border: 1px solid #c0d0e8; color: var(--blue-tx); font-size: 13px; padding: 4px 14px; border-radius: 20px; }
+    .lang-chip-gray { background: #fff; border: 1px solid var(--gray-bd); color: var(--text-lt); font-size: 12px; padding: 4px 12px; border-radius: 20px; }
+  </style>
+</head>
+<body>
+<div id="site-header"></div>
+
+<!-- HERO -->
+<div style="background:var(--navy-dk);padding:48px 1.5rem 40px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 75% 50%,rgba(232,146,10,0.1) 0%,transparent 60%)"></div>
+  <div class="page-hero-inner" style="position:relative">
+    <div class="breadcrumb">
+      <a href="index.html">ホーム</a><span>/</span>
+      <span class="breadcrumb-cur">クルーズ船 寄港地ツアー</span>
+    </div>
+    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(232,146,10,0.2);border:1px solid rgba(232,146,10,0.45);color:var(--orange-lt);font-size:12px;padding:5px 14px;border-radius:20px;margin-bottom:18px">⚓ クルーズ船 寄港地 専用プラン</div>
+    <h1 style="font-size:28px;font-weight:500;color:#fff;line-height:1.5;margin-bottom:12px" data-i18n="cr.hero.h1">限られた時間で、鹿児島を全力で楽しむ。<br>クルーズ乗客向け観光タクシー</h1>
+    <p style="color:rgba(255,255,255,0.72);font-size:14px;line-height:1.9;margin-bottom:28px">マリンポートかごしまに寄港中の数時間を最大限に活用。<br>桜島・天文館・知覧など鹿児島の名所を、乗船時間に合わせてご案内します。</p>
+    <div class="stat-row">
+      <div class="stat-mini">
+        <div class="stat-mini-num">183回</div>
+        <div class="stat-mini-lbl">2025年 鹿児島への寄港数（過去最多）</div>
+      </div>
+      <div class="stat-mini">
+        <div class="stat-mini-num">2〜6時間</div>
+        <div class="stat-mini-lbl">対応可能な滞在時間の目安</div>
+      </div>
+      <div class="stat-mini">
+        <div class="stat-mini-num">港から直接</div>
+        <div class="stat-mini-lbl">マリンポートかごしまでお出迎え</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POINT BAR -->
+<div class="point-bar">
+  <div class="point-inner">
+    <div class="pt"><div class="pt-chk">✓</div> 港から直接出発・帰着</div>
+    <div class="pt"><div class="pt-chk">✓</div> 乗船時間30分前には港に帰着保証</div>
+    <div class="pt"><div class="pt-chk">✓</div> 英語・中国語・韓国語 対応準備中</div>
+    <div class="pt"><div class="pt-chk">✓</div> キャッシュレス全車対応</div>
+    <div class="pt"><div class="pt-chk">✓</div> 事前予約推奨</div>
+  </div>
+</div>
+
+<!-- COURSES -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="cr.courses.title">おすすめコース</div>
+      <div class="sec-sub" data-i18n="cr.courses.sub">滞在時間・ご興味に合わせてお選びください。カスタマイズも承ります。</div>
+    </div>
+    <div class="course-grid">
+
+      <div class="course-card">
+        <div class="course-top">
+          <div class="course-badge-row">
+            <span class="badge badge-label">約2〜3時間</span>
+            <span class="badge badge-orange">人気No.1</span>
+          </div>
+          <h3 data-i18n="cr.c1.title">桜島ショートコース</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>マリンポートかごしま → 桜島フェリー乗り場（約30分）</div>
+            <div class="spot-item"><div class="spot-dot"></div>桜島フェリー乗船（15分）</div>
+            <div class="spot-item"><div class="spot-dot"></div>溶岩なぎさ公園・湯之平展望所</div>
+            <div class="spot-item"><div class="spot-dot"></div>港に戻って乗船 ✅</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="psub">参考料金（1〜4名）</div>
+            <div class="pval">¥12,000〜</div>
+            <div class="psub">メーター制／概算</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-top">
+          <div class="course-badge-row">
+            <span class="badge badge-label">約3〜4時間</span>
+            <span class="badge badge-label">定番</span>
+          </div>
+          <h3 data-i18n="cr.c2.title">鹿児島市内ハイライト</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>仙巌園（磯庭園）・世界文化遺産</div>
+            <div class="spot-item"><div class="spot-dot"></div>天文館（市内中心街・お土産・食事）</div>
+            <div class="spot-item"><div class="spot-dot"></div>西郷隆盛銅像・城山展望台</div>
+            <div class="spot-item"><div class="spot-dot"></div>港に戻って乗船 ✅</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="psub">参考料金（1〜4名）</div>
+            <div class="pval">¥15,000〜</div>
+            <div class="psub">メーター制／概算</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-top">
+          <div class="course-badge-row">
+            <span class="badge badge-label">約5〜6時間</span>
+            <span class="badge badge-label">充実プラン</span>
+          </div>
+          <h3 data-i18n="cr.c3.title">知覧・歴史遺産コース</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>知覧特攻平和会館（歴史遺産）</div>
+            <div class="spot-item"><div class="spot-dot"></div>知覧武家屋敷庭園（国の名勝）</div>
+            <div class="spot-item"><div class="spot-dot"></div>途中で薩摩の郷土料理を堪能</div>
+            <div class="spot-item"><div class="spot-dot"></div>港に戻って乗船 ✅</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="psub">参考料金（1〜4名）</div>
+            <div class="pval">¥25,000〜</div>
+            <div class="psub">メーター制／概算</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-top">
+          <div class="course-badge-row">
+            <span class="badge badge-label">時間 相談</span>
+            <span class="badge badge-label">カスタム</span>
+          </div>
+          <h3 data-i18n="cr.c4.title">完全オーダーメイドコース</h3>
+          <div class="spot-list">
+            <div class="spot-item"><div class="spot-dot"></div>行きたい場所・時間をご相談ください</div>
+            <div class="spot-item"><div class="spot-dot"></div>グループ・ファミリーにも対応</div>
+            <div class="spot-item"><div class="spot-dot"></div>アルファード（大型・6名まで）も選択可</div>
+            <div class="spot-item"><div class="spot-dot"></div>乗船時間の30分前には港に帰着保証</div>
+          </div>
+        </div>
+        <div class="course-footer">
+          <div>
+            <div class="psub">お見積り</div>
+            <div class="pval">要相談</div>
+            <div class="psub">まずはお気軽に</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">相談する</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="cr.flow.title">ご利用の流れ</div>
+      <div class="sec-sub" data-i18n="cr.flow.sub">事前予約でスムーズにご出発いただけます</div>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="fs-circle">📝</div>
+        <div class="fs-num">STEP 1</div>
+        <div class="fs-title" data-i18n="cr.f1.title">事前予約</div>
+        <div class="fs-desc" data-i18n="cr.f1.desc">電話・メール・フォームから寄港日・希望コースをご連絡</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">⚓</div>
+        <div class="fs-num">STEP 2</div>
+        <div class="fs-title" data-i18n="cr.f2.title">港でお迎え</div>
+        <div class="fs-desc">マリンポートかごしまの所定場所に指定時刻にお迎え</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">🌋</div>
+        <div class="fs-num">STEP 3</div>
+        <div class="fs-title" data-i18n="cr.f3.title">観光スタート</div>
+        <div class="fs-desc">ドライバーがご案内。途中の変更・追加もお気軽に</div>
+      </div>
+      <div class="flow-step">
+        <div class="fs-circle">🚢</div>
+        <div class="fs-num">STEP 4</div>
+        <div class="fs-title" data-i18n="cr.f4.title">港に帰着</div>
+        <div class="fs-desc">乗船時間30分前には港へ。キャッシュレスでお支払い</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGE -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="lang-box">
+      <div class="lang-icon">🌐</div>
+      <div class="lang-body">
+        <h3 data-i18n="cr.lang.title">外国語対応について</h3>
+        <p>現在、英語・中国語・韓国語対応ドライバーを育成中です。<br>翻訳アプリを活用した対応も可能です。順次拡充してまいります。</p>
+        <div class="lang-chips">
+          <span class="lang-chip">🇺🇸 English（準備中）</span>
+          <span class="lang-chip">🇨🇳 中文（準備中）</span>
+          <span class="lang-chip">🇰🇷 한국어（準備中）</span>
+          <span class="lang-chip-gray">翻訳アプリ 今すぐ対応可</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-title" data-i18n="cr.faq.title">よくあるご質問</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q1">乗船時間に遅れないか不安です</span></div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> 乗船締め切り時間をお知らせいただければ、余裕をもって港にお戻りいたします。万一の渋滞にも備えたルート設計を行います。乗船30分前には必ず港に到着するよう努めます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> 何人まで乗れますか？</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> 通常のプリウスは最大4名、アルファードは最大6〜7名まで対応可能です。大人数の場合は複数台のご手配も承ります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q3">当日の予約は可能ですか？</span></div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> 可能な限り対応いたしますが、人気の寄港日は混雑します。事前のご予約を強くおすすめします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q4">支払いはどうなりますか？</span></div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> 現金・クレジットカード・電子マネー（ペイキャス）に対応しています。ご乗車終了後にお支払いください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q5">コースの途中で変更はできますか？</span></div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> もちろん可能です。お気軽にドライバーにお申し付けください。乗船時間に余裕があればご対応いたします。</div>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--navy);padding:44px 1.5rem;text-align:center">
+  <div style="color:#fff;font-size:20px;font-weight:500;margin-bottom:10px" data-i18n="cr.cta.title">ご予約・お問い合わせ</div>
+  <div style="color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:24px">寄港日・人数・ご希望をお知らせください。コースのご相談も歓迎です。</div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="tel:0992580085" class="btn btn-primary">📞 099-258-0085（観光・予約専用）</a>
+    <a href="contact.html" class="btn btn-outline" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8)">✉️ メールで問い合わせ</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="i18n.js"></script>
+<script src="common.js"></script>
+</body>
+</html>
