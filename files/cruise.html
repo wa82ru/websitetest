@@ -109,24 +109,24 @@
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 75% 50%,rgba(232,146,10,0.1) 0%,transparent 60%)"></div>
   <div class="page-hero-inner" style="position:relative">
     <div class="breadcrumb">
-      <a href="index.html">ホーム</a><span>/</span>
-      <span class="breadcrumb-cur">クルーズ船 寄港地ツアー</span>
+      <a href="index.html" data-i18n="nav.home">ホーム</a><span>/</span>
+      <span class="breadcrumb-cur" data-i18n="nav.cruise">クルーズ船 寄港地ツアー</span>
     </div>
-    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(232,146,10,0.2);border:1px solid rgba(232,146,10,0.45);color:var(--orange-lt);font-size:12px;padding:5px 14px;border-radius:20px;margin-bottom:18px">⚓ クルーズ船 寄港地 専用プラン</div>
+    <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(232,146,10,0.2);border:1px solid rgba(232,146,10,0.45);color:var(--orange-lt);font-size:12px;padding:5px 14px;border-radius:20px;margin-bottom:18px" data-i18n="cr.hero.badge">⚓ クルーズ船 寄港地 専用プラン</div>
     <h1 style="font-size:28px;font-weight:500;color:#fff;line-height:1.5;margin-bottom:12px" data-i18n="cr.hero.h1">限られた時間で、鹿児島を全力で楽しむ。<br>クルーズ乗客向け観光タクシー</h1>
-    <p style="color:rgba(255,255,255,0.72);font-size:14px;line-height:1.9;margin-bottom:28px">マリンポートかごしまに寄港中の数時間を最大限に活用。<br>桜島・天文館・知覧など鹿児島の名所を、乗船時間に合わせてご案内します。</p>
+    <p style="color:rgba(255,255,255,0.72);font-size:14px;line-height:1.9;margin-bottom:28px" data-i18n="cr.hero.desc">マリンポートかごしまに寄港中の数時間を最大限に活用。<br>桜島・天文館・知覧など鹿児島の名所を、乗船時間に合わせてご案内します。</p>
     <div class="stat-row">
       <div class="stat-mini">
-        <div class="stat-mini-num">183回</div>
-        <div class="stat-mini-lbl">2025年 鹿児島への寄港数（過去最多）</div>
+        <div class="stat-mini-num" data-i18n="cr.stat1num">183回</div>
+        <div class="stat-mini-lbl" data-i18n="cr.stat1">2025年 鹿児島への寄港数（過去最多）</div>
       </div>
       <div class="stat-mini">
-        <div class="stat-mini-num">2〜6時間</div>
-        <div class="stat-mini-lbl">対応可能な滞在時間の目安</div>
+        <div class="stat-mini-num" data-i18n="cr.stat2num">2〜6時間</div>
+        <div class="stat-mini-lbl" data-i18n="cr.stat2">対応可能な滞在時間の目安</div>
       </div>
       <div class="stat-mini">
-        <div class="stat-mini-num">港から直接</div>
-        <div class="stat-mini-lbl">マリンポートかごしまでお出迎え</div>
+        <div class="stat-mini-num" data-i18n="cr.stat3num">港から直接</div>
+        <div class="stat-mini-lbl" data-i18n="cr.stat3">マリンポートかごしまでお出迎え</div>
       </div>
     </div>
   </div>
@@ -135,11 +135,11 @@
 <!-- POINT BAR -->
 <div class="point-bar">
   <div class="point-inner">
-    <div class="pt"><div class="pt-chk">✓</div> 港から直接出発・帰着</div>
-    <div class="pt"><div class="pt-chk">✓</div> 乗船時間30分前には港に帰着保証</div>
-    <div class="pt"><div class="pt-chk">✓</div> 英語・中国語・韓国語 対応準備中</div>
-    <div class="pt"><div class="pt-chk">✓</div> キャッシュレス全車対応</div>
-    <div class="pt"><div class="pt-chk">✓</div> 事前予約推奨</div>
+    <div class="pt"><div class="pt-chk">✓</div> <span data-i18n="cr.pt1">港から直接出発・帰着</span></div>
+    <div class="pt"><div class="pt-chk">✓</div> <span data-i18n="cr.pt2">乗船締め切り時刻を確認し、余裕を持って港へ</span></div>
+    <div class="pt"><div class="pt-chk">✓</div> <span data-i18n="cr.pt3">英語・中国語・韓国語 対応準備中</span></div>
+    <div class="pt"><div class="pt-chk">✓</div> <span data-i18n="cr.pt4">キャッシュレス全車対応</span></div>
+    <div class="pt"><div class="pt-chk">✓</div> <span data-i18n="cr.pt5">事前予約推奨</span></div>
   </div>
 </div>
 
@@ -157,7 +157,7 @@
         <div class="course-top">
           <div class="course-badge-row">
             <span class="badge badge-label">約2〜3時間</span>
-            <span class="badge badge-orange">人気No.1</span>
+            <span class="badge badge-orange" data-i18n="cr.badge.recommended">おすすめ</span>
           </div>
           <h3 data-i18n="cr.c1.title">桜島ショートコース</h3>
           <div class="spot-list">
@@ -173,7 +173,7 @@
             <div class="pval">¥12,000〜</div>
             <div class="psub">メーター制／概算</div>
           </div>
-          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+          <a href="contact.html?type=cruise" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
         </div>
       </div>
 
@@ -198,7 +198,7 @@
             <div class="pval">¥15,000〜</div>
             <div class="psub">メーター制／概算</div>
           </div>
-          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+          <a href="contact.html?type=cruise" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
         </div>
       </div>
 
@@ -223,7 +223,7 @@
             <div class="pval">¥25,000〜</div>
             <div class="psub">メーター制／概算</div>
           </div>
-          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
+          <a href="contact.html?type=cruise" class="btn btn-primary" style="padding:10px 18px;font-size:13px">予約する</a>
         </div>
       </div>
 
@@ -238,7 +238,7 @@
             <div class="spot-item"><div class="spot-dot"></div>行きたい場所・時間をご相談ください</div>
             <div class="spot-item"><div class="spot-dot"></div>グループ・ファミリーにも対応</div>
             <div class="spot-item"><div class="spot-dot"></div>アルファード（大型・6名まで）も選択可</div>
-            <div class="spot-item"><div class="spot-dot"></div>乗船時間の30分前には港に帰着保証</div>
+            <div class="spot-item"><div class="spot-dot"></div><span data-i18n="cr.c4.s4">乗船締め切り時刻に合わせて行程を調整</span></div>
           </div>
         </div>
         <div class="course-footer">
@@ -247,7 +247,7 @@
             <div class="pval">要相談</div>
             <div class="psub">まずはお気軽に</div>
           </div>
-          <a href="contact.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px">相談する</a>
+          <a href="contact.html?type=cruise" class="btn btn-primary" style="padding:10px 18px;font-size:13px">相談する</a>
         </div>
       </div>
 
@@ -268,7 +268,7 @@
         <div class="fs-circle">📝</div>
         <div class="fs-num">STEP 1</div>
         <div class="fs-title" data-i18n="cr.f1.title">事前予約</div>
-        <div class="fs-desc" data-i18n="cr.f1.desc">電話・メール・フォームから寄港日・希望コースをご連絡</div>
+        <div class="fs-desc" data-i18n="cr.f1.desc">電話・メールで寄港日・希望コースをご連絡</div>
       </div>
       <div class="flow-step">
         <div class="fs-circle">⚓</div>
@@ -286,7 +286,7 @@
         <div class="fs-circle">🚢</div>
         <div class="fs-num">STEP 4</div>
         <div class="fs-title" data-i18n="cr.f4.title">港に帰着</div>
-        <div class="fs-desc">乗船時間30分前には港へ。キャッシュレスでお支払い</div>
+        <div class="fs-desc" data-i18n="cr.f4.desc">余裕を持って港へ戻り、お支払い</div>
       </div>
     </div>
   </div>
@@ -319,38 +319,38 @@
     </div>
     <div class="faq-item">
       <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q1">乗船時間に遅れないか不安です</span></div>
-      <div class="faq-a"><span class="faq-a-mark">A</span> 乗船締め切り時間をお知らせいただければ、余裕をもって港にお戻りいたします。万一の渋滞にも備えたルート設計を行います。乗船30分前には必ず港に到着するよう努めます。</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> <span data-i18n="cr.a1">乗船締め切り時刻をお知らせください。道路状況を考慮し、余裕を持って港に戻る行程をご提案します。</span></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q"><span class="faq-q-mark">Q</span> 何人まで乗れますか？</div>
-      <div class="faq-a"><span class="faq-a-mark">A</span> 通常のプリウスは最大4名、アルファードは最大6〜7名まで対応可能です。大人数の場合は複数台のご手配も承ります。</div>
+      <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q2">何人まで乗れますか？</span></div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> <span data-i18n="cr.a2">普通車は最大4名、アルファードは最大6名までのご案内です。人数や荷物の量に応じて、必要な車両をご相談ください。</span></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q3">当日の予約は可能ですか？</span></div>
-      <div class="faq-a"><span class="faq-a-mark">A</span> 可能な限り対応いたしますが、人気の寄港日は混雑します。事前のご予約を強くおすすめします。</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> <span data-i18n="cr.a3">可能な限り対応いたしますが、人気の寄港日は混雑します。事前のご予約をおすすめします。</span></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q4">支払いはどうなりますか？</span></div>
-      <div class="faq-a"><span class="faq-a-mark">A</span> 現金・クレジットカード・電子マネー（ペイキャス）に対応しています。ご乗車終了後にお支払いください。</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> <span data-i18n="cr.a4">現金・タッチ決済対応のクレジットカード・QRコード決済に対応しています。電子マネーはご利用いただけません。</span></div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span class="faq-q-mark">Q</span> <span data-i18n="cr.q5">コースの途中で変更はできますか？</span></div>
-      <div class="faq-a"><span class="faq-a-mark">A</span> もちろん可能です。お気軽にドライバーにお申し付けください。乗船時間に余裕があればご対応いたします。</div>
+      <div class="faq-a"><span class="faq-a-mark">A</span> <span data-i18n="cr.a5">途中の変更は乗務員にご相談ください。乗船時間と道路状況を確認してご案内します。</span></div>
     </div>
   </div>
 </section>
 
 <div style="background:var(--navy);padding:44px 1.5rem;text-align:center">
   <div style="color:#fff;font-size:20px;font-weight:500;margin-bottom:10px" data-i18n="cr.cta.title">ご予約・お問い合わせ</div>
-  <div style="color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:24px">寄港日・人数・ご希望をお知らせください。コースのご相談も歓迎です。</div>
+  <div style="color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:24px" data-i18n="cr.cta.sub">寄港日・人数・ご希望をお知らせください。コースのご相談も歓迎です。</div>
   <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-    <a href="tel:0992580085" class="btn btn-primary">📞 099-258-0085（観光・予約専用）</a>
-    <a href="contact.html" class="btn btn-outline" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8)">✉️ メールで問い合わせ</a>
+    <a href="tel:0992580085" class="btn btn-primary" data-i18n="cr.cta.tel">📞 099-258-0085（観光・予約専用）</a>
+    <a href="contact.html?type=cruise" class="btn btn-outline" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8)" data-i18n="cr.cta.mail">✉️ メールで問い合わせ</a>
   </div>
 </div>
 
 <div id="site-footer"></div>
-<script src="i18n.js?v=20261022-cruise-photos"></script>
+<script src="i18n.js?v=20261022-copy-links"></script>
 <script src="common.js"></script>
 </body>
 </html>

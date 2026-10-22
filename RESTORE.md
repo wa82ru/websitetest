@@ -29,3 +29,7 @@ git push origin main
 ## クルーズ観光・料金案内の写真追加前に戻す場合
 
 今回の追加前の公開状態は、`backup/pre-cruise-fares-photos-2026-10-22` ブランチに保存しています（コミット `59ddaff4ac79ac9485669d2c18b509e41980fae6`）。この時点へ戻すには、上記の `git restore` 行の参照先を `origin/backup/pre-cruise-fares-photos-2026-10-22` に変更して実行します。
+
+## 文言・リンク・お問い合わせ方法の修正前に戻す場合
+
+今回の修正前の公開状態は、`backup/pre-copy-links-2026-10-22` ブランチに保存しています（コミット `a7436bb9c7d7d5987ef79181b20cf2674e73139b`）。この時点へ戻すには、上記の `git restore` 行の参照先を `origin/backup/pre-copy-links-2026-10-22` に変更して実行します。

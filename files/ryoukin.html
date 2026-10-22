@@ -90,14 +90,15 @@
         <span class="fare-unit">円</span>
       </div>
       <div class="fare-note" data-i18n="r.basic.note">1,300メートルまで</div>
-      <div class="fare-detail">
+      <div class="fare-detail" data-i18n="r.basic.detail">
         以降 <strong>145メートルごとに50円</strong> 加算<br>
         走行時速10km以下になると時間運賃が併用され、<strong>55秒ごとに50円</strong>加算
       </div>
     </div>
+    <p style="margin:10px 0 20px;font-size:12px;color:var(--text-lt)" data-i18n="r.basic.source">運賃単価の出典：<a href="https://www5.synapse.kagoshima.jp/fare.html" target="_blank" rel="noopener">鹿児島県タクシー協会（2026年4月1日現在）</a>。実際の適用運賃はご利用時にご確認ください。</p>
     <div style="background:var(--orange-bg);border-radius:var(--radius-sm);padding:16px 20px;border-left:3px solid var(--orange)">
       <div style="font-size:14px;font-weight:500;color:var(--navy);margin-bottom:6px" data-i18n="r.tip.title">遠方・観光・長時間のご利用には「時間貸し運賃」がお得です</div>
-      <div style="font-size:13px;color:var(--text-md)">4時間・6時間などまとめてご利用いただく場合は、時間貸し料金での計算がお得になる場合があります。観光タクシーのご予約時にご確認ください。</div>
+      <div style="font-size:13px;color:var(--text-md)" data-i18n="r.tip.desc">4時間・6時間などまとめてご利用いただく場合は、時間貸し料金での計算がお得になる場合があります。観光タクシーのご予約時にご確認ください。</div>
     </div>
   </div>
 </section>
@@ -184,26 +185,22 @@
     <div class="pay-grid">
       <div class="pay-card">
         <div class="pay-icon">💴</div>
-        <div class="pay-name">現金</div>
-        <div class="pay-note">いつでもご利用いただけます</div>
+        <div class="pay-name" data-i18n="r.pay.cash">現金</div>
+        <div class="pay-note" data-i18n="r.pay.cash.note">ご乗車後にお支払い</div>
       </div>
       <div class="pay-card">
         <div class="pay-icon">💳</div>
-        <div class="pay-name">クレジットカード</div>
-        <div class="pay-note">タッチ決済対応</div>
+        <div class="pay-name" data-i18n="r.pay.card">クレジットカード</div>
+        <div class="pay-note" data-i18n="r.pay.card.note">タッチ決済対応</div>
       </div>
       <div class="pay-card">
         <div class="pay-icon">📱</div>
-        <div class="pay-name">QRコード決済</div>
-        <div class="pay-note">PayPayなど各種対応</div>
-      </div>
-      <div class="pay-card">
-        <div class="pay-icon">📲</div>
-        <div class="pay-name">GOアプリ決済</div>
-        <div class="pay-note">アプリ内で完結</div>
+        <div class="pay-name" data-i18n="r.pay.qr">QRコード決済</div>
+        <div class="pay-note" data-i18n="r.pay.qr.note">利用できる種類は乗車前にご確認ください</div>
       </div>
     </div>
-    <div style="margin-top:16px;background:var(--blue-lt);border-radius:var(--radius-sm);padding:14px 18px;font-size:13px;color:var(--text-md)">
+    <p style="margin-top:14px;font-size:13px;color:var(--text-md)" data-i18n="r.pay.emoney">電子マネー決済には対応していません。</p>
+    <div style="margin-top:16px;background:var(--blue-lt);border-radius:var(--radius-sm);padding:14px 18px;font-size:13px;color:var(--text-md)" data-i18n="r.pay.note">
       ⚠️ 一部の乗務員はまだ端末の取り扱いに慣れていない場合がございますが、迅速・円滑な会計を目指して取り組んでいます。ご不便をおかけする場合は何卒ご了承ください。
     </div>
   </div>
@@ -212,13 +209,13 @@
 <div style="background:var(--navy);padding:44px 1.5rem;text-align:center">
   <div style="color:#fff;font-size:20px;font-weight:500;margin-bottom:10px" data-i18n="r.cta">ご不明な点はお気軽にお問い合わせください</div>
   <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px">
-    <a href="tel:0992555555" class="btn btn-primary">📞 099-255-5555（配車センター）</a>
-    <a href="contact.html" class="btn btn-outline">✉️ メールで問い合わせ</a>
+    <a href="tel:0992555555" class="btn btn-primary" data-i18n="r.cta.tel">📞 099-255-5555（配車センター）</a>
+    <a href="contact.html" class="btn btn-outline" data-i18n="r.cta.mail">✉️ メールで問い合わせ</a>
   </div>
 </div>
 
 <div id="site-footer"></div>
-<script src="i18n.js?v=20261022-fare-photo"></script>
+<script src="i18n.js?v=20261022-copy-links"></script>
 <script src="common.js"></script>
 </body>
 </html>
