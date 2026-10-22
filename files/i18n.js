@@ -409,7 +409,9 @@ function applyLang(lang) {
 
   // ボタンのアクティブ状態更新
   document.querySelectorAll('.lang-btn-item').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    const active = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', String(active));
   });
 }
 

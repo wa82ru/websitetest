@@ -230,7 +230,24 @@ a { color: inherit; text-decoration: none; }
 .lang-btn-item.active { background: var(--orange); color: #fff; }
 
 @media (max-width: 640px) {
-  .lang-switcher { display: none; }
+  .header-inner {
+    height: auto;
+    min-height: 60px;
+    padding: 7px 12px;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .header-right { display: contents; }
+  .header-logo { order: 0; }
+  .header-inner .header-logo img { height: clamp(22px, 7vw, 29px); }
+  .header-tel { order: 1; margin-left: auto; font-size: 12px; }
+  .lang-switcher {
+    display: flex;
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+  .lang-btn-item { min-height: 32px; padding: 5px 12px; }
 }
 
 /* ---- LOGO IMAGE ---- */

@@ -17,15 +17,15 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="header-logo">
-      <img src="images/logo.png" alt="株式会社 山元交通" style="height:36px;width:auto;">
+      <img src="images/logo.png" alt="株式会社 山元交通">
       <span class="header-logo-sub" data-i18n="header.logo.sub"></span>
     </a>
     <div class="header-right">
-      <div class="lang-switcher">
-        <button class="lang-btn-item" data-lang="ja" onclick="applyLang('ja')">JP</button>
-        <button class="lang-btn-item" data-lang="en" onclick="applyLang('en')">EN</button>
-        <button class="lang-btn-item" data-lang="zh" onclick="applyLang('zh')">中文</button>
-        <button class="lang-btn-item" data-lang="ko" onclick="applyLang('ko')">한국어</button>
+      <div class="lang-switcher" role="group" aria-label="Language / 言語">
+        <button type="button" class="lang-btn-item" data-lang="ja" onclick="applyLang('ja')">JP</button>
+        <button type="button" class="lang-btn-item" data-lang="en" onclick="applyLang('en')">EN</button>
+        <button type="button" class="lang-btn-item" data-lang="zh" onclick="applyLang('zh')">中文</button>
+        <button type="button" class="lang-btn-item" data-lang="ko" onclick="applyLang('ko')">한국어</button>
       </div>
       <div class="header-tel">
         <span class="header-tel-label" data-i18n="header.dispatch">配車</span>

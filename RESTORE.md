@@ -33,3 +33,7 @@ git push origin main
 ## 文言・リンク・お問い合わせ方法の修正前に戻す場合
 
 今回の修正前の公開状態は、`backup/pre-copy-links-2026-10-22` ブランチに保存しています（コミット `a7436bb9c7d7d5987ef79181b20cf2674e73139b`）。この時点へ戻すには、上記の `git restore` 行の参照先を `origin/backup/pre-copy-links-2026-10-22` に変更して実行します。
+
+## スマホの言語選択表示の修正前に戻す場合
+
+スマホの言語選択表示を修正する直前の公開状態は、`backup/pre-mobile-language-2026-10-22` ブランチに保存しています（コミット `3c0d4c81851da6db23bc53c5b3bbcbfcfd83d4b1`）。この時点へ戻すには、上記の `git restore` 行の参照先を `origin/backup/pre-mobile-language-2026-10-22` に変更して実行します。
