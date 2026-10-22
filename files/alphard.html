@@ -61,30 +61,30 @@
     /* 車両フォトエリア */
     .alphard-photo-wrap {
       position: relative; align-self: flex-end;
+      margin: 0;
     }
     .alphard-photo {
-      width: 100%; aspect-ratio: 4/3;
-      background: linear-gradient(135deg, #1e3d5c 0%, #2a5078 40%, #1a3050 100%);
+      width: 100%; aspect-ratio: 8/5;
+      background: #d8d8d3;
       border-radius: 16px 16px 0 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
       position: relative; overflow: hidden;
-    }
-    .alphard-photo-car { font-size: 90px; opacity: 0.85; margin-bottom: 8px; }
-    .alphard-photo-label {
-      background: rgba(0,0,0,0.35); color: rgba(255,255,255,0.7);
-      font-size: 11px; padding: 4px 14px; border-radius: 4px;
     }
     .alphard-photo-badge {
       position: absolute; top: 14px; right: 14px;
-      background: var(--orange); color: #fff;
+      background: rgba(16, 39, 62, 0.92); color: #fff;
       font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 4px;
     }
-    /* 写真差し替え用 img タグ（後で src を指定） */
     .alphard-photo img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; border-radius: 16px 16px 0 0;
+      display: block; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
     }
+    .alphard-photo-caption {
+      background: #fff; color: var(--text-md);
+      border-radius: 0 0 10px 10px;
+      padding: 10px 14px 12px;
+      font-size: 11px; line-height: 1.6;
+    }
+    .alphard-photo-caption a { color: var(--navy); text-decoration: underline; }
 
     /* POINT BAR */
     .point-bar {
@@ -100,32 +100,6 @@
       background: rgba(255,255,255,0.28);
       display: flex; align-items: center; justify-content: center;
       font-size: 9px; flex-shrink: 0;
-    }
-
-    /* INTERIOR PHOTOS */
-    .interior-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px; margin-top: 28px;
-    }
-    @media (max-width: 600px) { .interior-grid { grid-template-columns: 1fr 1fr; } }
-    .interior-photo {
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, #e8e4dc, #d0ccc0);
-      border-radius: var(--radius-sm);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-      border: 1px solid var(--gray-bd);
-    }
-    .interior-photo .ph-icon { font-size: 32px; opacity: 0.5; }
-    .interior-photo .ph-label {
-      font-size: 11px; color: #888; margin-top: 6px;
-    }
-    /* 写真差し替え用 */
-    .interior-photo img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; border-radius: var(--radius-sm);
     }
 
     /* SPEC TABLE */
@@ -259,20 +233,13 @@
         <a href="#alphard-fare" class="btn btn-outline" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8)">料金を確認する</a>
       </div>
     </div>
-    <div class="alphard-photo-wrap">
+    <figure class="alphard-photo-wrap">
       <div class="alphard-photo">
-        <!-- ↓ 写真が用意できたら src を指定してください -->
-        <img src="images/alphard_main.jpg" alt="アルファード ANH10W 白 外観"
-             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px 16px 0 0;"
-             onerror="this.style.display='none'">
-        <div class="alphard-photo-car" style="position:relative;z-index:1">🚐</div>
-        <div style="position:relative;z-index:1;font-size:12px;color:rgba(255,255,255,0.65);margin-top:6px;background:rgba(0,0,0,0.35);padding:4px 14px;border-radius:4px">
-          平成17年式 CBA-ANH10W ／ 白<br>
-          <span style="font-size:10px;opacity:0.7">📷 images/alphard_main.jpg に写真を置いてください</span>
-        </div>
-        <div class="alphard-photo-badge">貸切専用車</div>
+        <img src="images/alphard-reference.jpg" width="1280" height="627" fetchpriority="high" alt="白い初代トヨタ・アルファード V 後期型の参考写真。山元交通の実車ではありません。">
+        <div class="alphard-photo-badge" data-i18n="al.photo.badge">車種の参考写真</div>
       </div>
-    </div>
+      <figcaption class="alphard-photo-caption" data-i18n="al.photo.caption">初代アルファードの参考写真です。山元交通の実車ではなく、掲載車両の型式・装備も写真からは確認できません。写真：<a href="https://commons.wikimedia.org/wiki/File:2005_Toyota_Alphard_V.jpg">Mytho88（切り抜き：Alex Neman）/ Wikimedia Commons</a>（<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>、縮小版を使用）</figcaption>
+    </figure>
   </div>
 </div>
 
@@ -287,48 +254,6 @@
   </div>
 </div>
 
-<!-- INTERIOR PHOTOS -->
-<section class="section section-cream">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="sec-title" data-i18n="al.gallery.title">車内・外観ギャラリー</div>
-      <div class="sec-sub">写真は後で差し替えられます。src属性に画像パスを指定してください。</div>
-    </div>
-    <div class="interior-grid">
-      <div class="interior-photo">
-        <img src="images/alphard_front.jpg" alt="フロントビュー" onerror="this.style.display='none'">
-        <div class="ph-icon">🚐</div>
-        <div class="ph-label">フロント ／ images/alphard_front.jpg</div>
-      </div>
-      <div class="interior-photo">
-        <img src="images/alphard_side.jpg" alt="サイドビュー" onerror="this.style.display='none'">
-        <div class="ph-icon">🚗</div>
-        <div class="ph-label">サイド ／ images/alphard_side.jpg</div>
-      </div>
-      <div class="interior-photo">
-        <img src="images/alphard_rear.jpg" alt="リアビュー" onerror="this.style.display='none'">
-        <div class="ph-icon">🔙</div>
-        <div class="ph-label">リア ／ images/alphard_rear.jpg</div>
-      </div>
-      <div class="interior-photo">
-        <img src="images/alphard_interior1.jpg" alt="車内シート" onerror="this.style.display='none'">
-        <div class="ph-icon">💺</div>
-        <div class="ph-label">車内シート ／ images/alphard_interior1.jpg</div>
-      </div>
-      <div class="interior-photo">
-        <img src="images/alphard_interior2.jpg" alt="後部座席" onerror="this.style.display='none'">
-        <div class="ph-icon">🪑</div>
-        <div class="ph-label">後部座席 ／ images/alphard_interior2.jpg</div>
-      </div>
-      <div class="interior-photo">
-        <img src="images/alphard_trunk.jpg" alt="トランク" onerror="this.style.display='none'">
-        <div class="ph-icon">🧳</div>
-        <div class="ph-label">トランク ／ images/alphard_trunk.jpg</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SPEC -->
 <section class="section">
   <div class="wrap">
@@ -337,6 +262,7 @@
     </div>
     <table class="spec-table">
       <tr><th>車種</th><td>トヨタ アルファード</td></tr>
+      <tr><th>車両型式</th><td>CBA-ANH10W</td></tr>
       <tr><th>乗車定員</th><td>最大6名（ドライバー除く）</td></tr>
       <tr><th>用途</th><td>観光貸切専用車</td></tr>
       <tr><th>トランク</th><td>大型スーツケース対応</td></tr>
@@ -682,7 +608,7 @@
 </div>
 
 <div id="site-footer"></div>
-<script src="i18n.js"></script>
+<script src="i18n.js?v=20261022-alphard-photo"></script>
 <script src="common.js"></script>
 </body>
 </html>
