@@ -26,7 +26,7 @@ const I18N = {
     // ヒーロー
     'hero.tag':    '🌟 鹿児島の移動のパートナー',
     'hero.h1':     'いつでも、<em>だれでも</em>、<br>安心して使えるタクシーへ。',
-    'hero.desc':   '日常のお出かけから空港送迎・観光案内・クルーズ船の寄港地観光まで。<br>2026年の鹿児島に求められるサービスをお届けします。',
+    'hero.desc':   '鹿児島でのいつもの移動から、旅のひとときまで。<br>行き先やご予定を、お気軽にご相談ください。',
     'hero.btn1':   '観光プランを見る',
     'hero.btn2':   '料金を確認する',
     'hero.card.label': '今すぐ配車のご依頼',
@@ -76,6 +76,7 @@ const I18N = {
     // シーン
     'scene.title': 'こんな方にご利用いただいています',
     'scene.sub':   'どんなシーンでも山元交通がそばに',
+    'photos.note': '掲載写真は鹿児島の風景です。車両・乗務員・お客様の写真ではありません。<a href="photo-credits.html">写真の出典とライセンス</a>',
     'scene1.title': '高齢の方・免許返納された方',
     'scene1.desc':  '通院・買い物など毎日の移動を丁寧にサポート。慣れ親しんだドライバーがお迎えします。',
     'scene2.title': '鹿児島を観光したい方',
@@ -122,7 +123,7 @@ const I18N = {
 
     'hero.tag':    '🌟 Your Trusted Taxi in Kagoshima',
     'hero.h1':     'Your <em>reliable taxi</em><br>anytime, for everyone.',
-    'hero.desc':   'From daily trips and airport transfers to sightseeing tours and cruise port excursions.<br>We offer the services Kagoshima visitors need in 2026.',
+    'hero.desc':   'For everyday trips and memorable moments in Kagoshima.<br>Tell us where you are going and how we can help.',
     'hero.btn1':   'View Sightseeing Plans',
     'hero.btn2':   'Check Fares',
     'hero.card.label': 'Book a Taxi Now',
@@ -168,6 +169,7 @@ const I18N = {
 
     'scene.title': 'Who Uses Our Service',
     'scene.sub':   'We are here for every journey',
+    'photos.note': 'These are photographs of places in Kagoshima, not our vehicles, drivers or customers. <a href="photo-credits.html">Photo credits and licences</a>',
     'scene1.title': 'Seniors & Non-drivers',
     'scene1.desc':  'Reliable daily transport for hospital visits and errands by familiar, caring drivers.',
     'scene2.title': 'Sightseers in Kagoshima',
@@ -211,7 +213,7 @@ const I18N = {
 
     'hero.tag':    '🌟 鹿儿岛出行的可靠伙伴',
     'hero.h1':     '<em>随时随地</em>，<br>安心乘坐的出租车。',
-    'hero.desc':   '从日常出行、机场接送、观光导览到邮轮靠港游览，<br>提供2026年鹿儿岛所需的一流服务。',
+    'hero.desc':   '从日常出行到鹿儿岛的旅途时光。<br>欢迎告诉我们目的地和行程安排。',
     'hero.btn1':   '查看观光方案',
     'hero.btn2':   '确认费用',
     'hero.card.label': '立即叫车',
@@ -257,6 +259,7 @@ const I18N = {
 
     'scene.title': '我们的服务对象',
     'scene.sub':   '无论何种场合，山元交通都在您身边',
+    'photos.note': '所刊照片为鹿儿岛当地风景，并非本公司的车辆、司机或乘客。<a href="photo-credits.html">照片来源及许可</a>',
     'scene1.title': '老年人·交还驾照人士',
     'scene1.desc':  '由熟悉的司机为您提供就医、购物等日常出行的贴心服务。',
     'scene2.title': '来鹿儿岛观光的游客',
@@ -300,7 +303,7 @@ const I18N = {
 
     'hero.tag':    '🌟 가고시마의 이동 파트너',
     'hero.h1':     '<em>언제든지, 누구든지</em><br>안심하고 이용할 수 있는 택시.',
-    'hero.desc':   '일상 외출부터 공항 픽업, 관광 안내, 크루즈 기항지 관광까지.<br>2026년 가고시마에 필요한 서비스를 제공합니다.',
+    'hero.desc':   '가고시마의 일상 이동부터 특별한 여행까지.<br>목적지와 일정을 편하게 상담해 주세요.',
     'hero.btn1':   '관광 플랜 보기',
     'hero.btn2':   '요금 확인하기',
     'hero.card.label': '지금 바로 배차 요청',
@@ -346,6 +349,7 @@ const I18N = {
 
     'scene.title': '이런 분들이 이용하십니다',
     'scene.sub':   '어떤 상황에서도 야마모토 교통이 함께합니다',
+    'photos.note': '게재된 사진은 가고시마의 풍경이며 당사 차량, 기사 또는 고객의 사진이 아닙니다. <a href="photo-credits.html">사진 출처 및 라이선스</a>',
     'scene1.title': '고령자·면허 반납하신 분',
     'scene1.desc':  '통원·쇼핑 등 매일의 이동을 친숙한 드라이버가 정성껏 모십니다.',
     'scene2.title': '가고시마 관광객',

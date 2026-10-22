@@ -5,28 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>鹿児島のタクシー｜株式会社 山元交通</title>
   <meta name="description" content="鹿児島市のタクシー会社、山元交通。日常のお出かけ・空港送迎・観光タクシー・クルーズ船対応まで。24時間配車センター 099-255-5555">
+  <link rel="preload" as="image" href="images/hero-sakurajima.jpg">
   <link rel="stylesheet" href="style.css">
   <style>
     /* HERO */
     .hero {
-      background: var(--navy-dk);
+      background: linear-gradient(90deg, rgba(12,31,46,0.97) 0%, rgba(12,31,46,0.86) 43%, rgba(12,31,46,0.42) 100%), url('images/hero-sakurajima.jpg') center 42% / cover no-repeat;
       padding: 0;
       position: relative;
       overflow: hidden;
     }
     .hero-bg-pattern {
       position: absolute; inset: 0;
-      background-image: radial-gradient(circle at 70% 50%, rgba(232,146,10,0.08) 0%, transparent 60%),
-                        repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 40px);
+      background: linear-gradient(0deg, rgba(12,31,46,0.24), transparent 55%);
+      pointer-events: none;
     }
     .hero-inner {
       max-width: 1080px; margin: 0 auto;
-      padding: 56px 1.5rem 0;
+      padding: 72px 1.5rem 0;
       display: flex; gap: 2.5rem;
       align-items: flex-end; flex-wrap: wrap;
       position: relative;
     }
-    .hero-text { flex: 1; min-width: 280px; padding-bottom: 56px; }
+    .hero-text { flex: 1; min-width: 280px; padding-bottom: 72px; }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 6px;
       background: rgba(232,146,10,0.2);
@@ -49,7 +50,7 @@
     .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .hero-card {
-      background: #fff; border-radius: 16px 16px 0 0;
+      background: #fff; border-radius: 8px 8px 0 0;
       padding: 26px 24px 32px;
       min-width: 240px; width: 290px;
       flex-shrink: 0;
@@ -96,17 +97,14 @@
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
     }
-    .svc-card { background: #fff; border-radius: var(--radius); border: 1px solid var(--gray-bd); overflow: hidden; }
+    .svc-card { background: #fff; border-radius: 5px; border: 1px solid var(--gray-bd); overflow: hidden; }
     .svc-img {
-      height: 140px; display: flex; align-items: center;
-      justify-content: center; font-size: 52px;
+      height: 164px; overflow: hidden;
     }
-    .svc-img-kankou { background: linear-gradient(135deg, #d9edd5, #b8dab3); }
-    .svc-img-cruise  { background: linear-gradient(135deg, #cfe0f0, #a8c8e8); }
-    .svc-img-daily   { background: linear-gradient(135deg, #ede8d8, #ddd5c0); }
-    .svc-img-senior  { background: linear-gradient(135deg, #fce8ee, #f5c8d4); }
-    .svc-img-airport { background: linear-gradient(135deg, #e0e8f5, #c0ccec); }
-    .svc-img-biz     { background: linear-gradient(135deg, #e4e4e4, #cacaca); }
+    .svc-img img { width: 100%; height: 100%; object-fit: cover; }
+    .svc-img-kankou img { object-position: center 57%; }
+    .svc-img-cruise img { object-position: center 60%; }
+    .svc-img-airport img { object-position: center 55%; }
     .svc-body { padding: 18px 20px; }
     .svc-badges { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
     .svc-body h3 { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 7px; }
@@ -116,8 +114,10 @@
       padding: 11px 20px; background: #faf8f5;
     }
     .svc-link { font-size: 13px; color: var(--orange); font-weight: 500; }
-    a.svc-card { transition: transform 0.15s, box-shadow 0.15s; }
-    a.svc-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+    a.svc-card { display: flex !important; flex-direction: column; transition: transform 0.15s, box-shadow 0.15s; }
+    .svc-body { flex: 1; }
+    a.svc-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
+    a.svc-card:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
 
     /* STATS */
     .stats-grid {
@@ -145,11 +145,25 @@
     }
     .scene-card {
       background: #fff; border: 1px solid var(--gray-bd);
-      border-radius: var(--radius); padding: 20px;
+      border-radius: 5px; overflow: hidden;
     }
-    .scene-icon { font-size: 28px; margin-bottom: 10px; }
+    .scene-photo { width: 100%; height: 128px; object-fit: cover; }
+    .scene-copy { padding: 18px 18px 20px; }
     .scene-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
     .scene-desc  { font-size: 13px; color: var(--text-md); line-height: 1.7; }
+    .photo-note { font-size: 12px; color: var(--text-md); margin-top: 18px; line-height: 1.7; }
+    .photo-note a { text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 640px) {
+      .hero { background-position: 59% center; background-image: linear-gradient(90deg, rgba(12,31,46,0.94), rgba(12,31,46,0.72)), url('images/hero-sakurajima.jpg'); }
+      .hero-inner { padding-top: 46px; gap: 0; }
+      .hero-text { padding-bottom: 38px; }
+      .hero h1 { font-size: clamp(24px, 6.5vw, 28px); }
+      .hero h1 br { display: none; }
+      .hero-card { width: 100%; min-width: 0; }
+      .svc-img { height: 190px; }
+      .scene-photo { height: 160px; }
+    }
 
     /* NEWS */
     .news-row {
@@ -192,10 +206,7 @@
     <div class="hero-text">
       <div class="hero-tag" data-i18n="hero.tag">🌟 鹿児島の移動のパートナー</div>
       <h1 data-i18n="hero.h1">いつでも、<em>だれでも</em>、<br>安心して使えるタクシーへ。</h1>
-      <p class="hero-desc">
-        日常のお出かけから空港送迎・観光案内・クルーズ船の寄港地観光まで。<br>
-        2026年の鹿児島に求められるサービスをお届けします。
-      </p>
+      <p class="hero-desc" data-i18n="hero.desc">鹿児島でのいつもの移動から、旅のひとときまで。<br>行き先やご予定を、お気軽にご相談ください。</p>
       <div class="hero-btns">
         <a href="kankou.html" class="btn btn-primary" data-i18n="hero.btn1">観光プランを見る</a>
         <a href="ryoukin.html" class="btn btn-outline" data-i18n="hero.btn2" style="background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.8)">料金を確認する</a>
@@ -235,7 +246,7 @@
     </div>
     <div class="svc-grid">
       <a href="kankou.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
-        <div class="svc-img svc-img-kankou">🌋</div>
+        <div class="svc-img svc-img-kankou"><img src="images/service-tour.jpg" alt="桜島と鹿児島水族館の風景" width="960" height="720" loading="lazy" decoding="async"></div>
         <div class="svc-body">
           <div class="svc-badges"><span class="badge badge-orange">人気</span></div>
           <h3 data-i18n="svc1.title">観光タクシー</h3>
@@ -244,7 +255,7 @@
         <div class="svc-footer"><span class="svc-link" data-i18n="svc1.link">コースを見る →</span></div>
       </a>
       <a href="cruise.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
-        <div class="svc-img svc-img-cruise">⚓</div>
+        <div class="svc-img svc-img-cruise"><img src="images/service-cruise.jpg" alt="マリンポートかごしまの海辺" width="960" height="720" loading="lazy" decoding="async"></div>
         <div class="svc-body">
           <div class="svc-badges"><span class="badge badge-label">注目</span><span class="badge badge-green">新設</span></div>
           <h3 data-i18n="svc2.title">クルーズ船 寄港地ツアー</h3>
@@ -253,7 +264,7 @@
         <div class="svc-footer"><span class="svc-link" data-i18n="svc2.link">プランを見る →</span></div>
       </a>
       <a href="ryoukin.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
-        <div class="svc-img svc-img-daily">🏙️</div>
+        <div class="svc-img svc-img-daily"><img src="images/service-daily.jpg" alt="鹿児島市・天文館の街並み" width="960" height="720" loading="lazy" decoding="async"></div>
         <div class="svc-body">
           <div class="svc-badges"><span class="badge badge-label">定番</span></div>
           <h3 data-i18n="svc3.title">日常のご利用</h3>
@@ -262,7 +273,7 @@
         <div class="svc-footer"><span class="svc-link" data-i18n="svc3.link">料金を見る →</span></div>
       </a>
       <a href="contact.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
-        <div class="svc-img svc-img-senior">👴</div>
+        <div class="svc-img svc-img-senior"><img src="images/service-senior.jpg" alt="天文館本通りの商店街" width="960" height="720" loading="lazy" decoding="async"></div>
         <div class="svc-body">
           <div class="svc-badges"><span class="badge badge-green">注力中</span></div>
           <h3 data-i18n="svc4.title">高齢者・通院サポート</h3>
@@ -271,7 +282,7 @@
         <div class="svc-footer"><span class="svc-link" data-i18n="svc4.link">問い合わせる →</span></div>
       </a>
       <a href="contact.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
-        <div class="svc-img svc-img-airport">✈️</div>
+        <div class="svc-img svc-img-airport"><img src="images/service-airport.jpg" alt="鹿児島空港のターミナル前" width="960" height="640" loading="lazy" decoding="async"></div>
         <div class="svc-body">
           <div class="svc-badges"><span class="badge badge-label">おすすめ</span></div>
           <h3 data-i18n="svc5.title">空港・駅 送迎</h3>
@@ -280,7 +291,7 @@
         <div class="svc-footer"><span class="svc-link" data-i18n="svc5.link">予約する →</span></div>
       </a>
       <a href="contact.html" class="svc-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer">
-        <div class="svc-img svc-img-biz">🏢</div>
+        <div class="svc-img svc-img-biz"><img src="images/service-business.jpg" alt="鹿児島中央駅前の風景" width="960" height="720" loading="lazy" decoding="async"></div>
         <div class="svc-body">
           <div class="svc-badges"><span class="badge badge-label">法人</span></div>
           <h3 data-i18n="svc6.title">法人・ビジネス利用</h3>
@@ -329,26 +340,35 @@
     </div>
     <div class="scene-grid">
       <div class="scene-card">
-        <div class="scene-icon">👵</div>
-        <div class="scene-title" data-i18n="scene1.title">高齢の方・免許返納された方</div>
-        <div class="scene-desc" data-i18n="scene1.desc">通院・買い物など毎日の移動を丁寧にサポート。慣れ親しんだドライバーがお迎えします。</div>
+        <img class="scene-photo" src="images/service-senior.jpg" alt="天文館本通りの商店街" width="960" height="720" loading="lazy" decoding="async">
+        <div class="scene-copy">
+          <div class="scene-title" data-i18n="scene1.title">高齢の方・免許返納された方</div>
+          <div class="scene-desc" data-i18n="scene1.desc">通院・買い物など毎日の移動を丁寧にサポート。慣れ親しんだドライバーがお迎えします。</div>
+        </div>
       </div>
       <div class="scene-card">
-        <div class="scene-icon">🗾</div>
-        <div class="scene-title" data-i18n="scene2.title">鹿児島を観光したい方</div>
-        <div class="scene-desc" data-i18n="scene2.desc">桜島・指宿・霧島など、鹿児島を知り尽くしたドライバーがご案内します。</div>
+        <img class="scene-photo" src="images/service-tour.jpg" alt="桜島と鹿児島水族館の風景" width="960" height="720" loading="lazy" decoding="async">
+        <div class="scene-copy">
+          <div class="scene-title" data-i18n="scene2.title">鹿児島を観光したい方</div>
+          <div class="scene-desc" data-i18n="scene2.desc">桜島・指宿・霧島など、鹿児島を知り尽くしたドライバーがご案内します。</div>
+        </div>
       </div>
       <div class="scene-card">
-        <div class="scene-icon">🚢</div>
-        <div class="scene-title" data-i18n="scene3.title">クルーズ船でお越しの方</div>
-        <div class="scene-desc" data-i18n="scene3.desc">寄港中の数時間を最大活用。乗船時間に合わせたコース設計で安心してお楽しみいただけます。</div>
+        <img class="scene-photo" src="images/service-cruise.jpg" alt="マリンポートかごしまの海辺" width="960" height="720" loading="lazy" decoding="async">
+        <div class="scene-copy">
+          <div class="scene-title" data-i18n="scene3.title">クルーズ船でお越しの方</div>
+          <div class="scene-desc" data-i18n="scene3.desc">寄港中の数時間を最大活用。乗船時間に合わせたコース設計で安心してお楽しみいただけます。</div>
+        </div>
       </div>
       <div class="scene-card">
-        <div class="scene-icon">🌏</div>
-        <div class="scene-title" data-i18n="scene4.title">外国からのお客様</div>
-        <div class="scene-desc" data-i18n="scene4.desc">多言語対応を順次拡充中。翻訳アプリを使った対応も可能です。</div>
+        <img class="scene-photo" src="images/service-business.jpg" alt="鹿児島中央駅前の風景" width="960" height="720" loading="lazy" decoding="async">
+        <div class="scene-copy">
+          <div class="scene-title" data-i18n="scene4.title">外国からのお客様</div>
+          <div class="scene-desc" data-i18n="scene4.desc">多言語対応を順次拡充中。翻訳アプリを使った対応も可能です。</div>
+        </div>
       </div>
     </div>
+    <p class="photo-note" data-i18n="photos.note">掲載写真は鹿児島の風景です。車両・乗務員・お客様の写真ではありません。<a href="photo-credits.html">写真の出典とライセンス</a></p>
   </div>
 </section>
 
