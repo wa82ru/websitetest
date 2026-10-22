@@ -21,3 +21,7 @@ git push origin main
 ## アルファード参考写真の追加前に戻す場合
 
 白いアルファードの参考写真を追加する直前の公開状態は、`backup/pre-alphard-photo-2026-10-22` ブランチに保存しています（コミット `1f91a3963d5e945d55973725e757bc916b182841`）。この時点へ戻すには、上記の `git restore` 行の参照先を `origin/backup/pre-alphard-photo-2026-10-22` に変更して実行します。
+
+## 観光タクシーページの写真追加前に戻す場合
+
+観光タクシーページの写真を追加する直前の公開状態は、`backup/pre-sightseeing-photos-2026-10-22` ブランチに保存しています（コミット `b59601ae2e155a77dd997bc93eb148652c4e653a`）。この時点へ戻すには、上記の `git restore` 行の参照先を `origin/backup/pre-sightseeing-photos-2026-10-22` に変更して実行します。

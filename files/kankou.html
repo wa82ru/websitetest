@@ -7,6 +7,15 @@
   <meta name="description" content="桜島・指宿・霧島・知覧など鹿児島の名所をプロドライバーがご案内。山元交通の観光タクシーコース一覧。">
   <link rel="stylesheet" href="style.css">
   <style>
+    .sightseeing-hero {
+      background: linear-gradient(90deg, rgba(12, 35, 57, 0.9), rgba(12, 35, 57, 0.58)),
+        url("images/hero-sakurajima.jpg") center 20% / cover;
+      padding-top: 56px;
+      padding-bottom: 58px;
+    }
+    .sightseeing-hero .page-hero-inner { max-width: 1080px; }
+    .sightseeing-hero h1 { font-size: clamp(26px, 3vw, 38px); }
+    .sightseeing-hero p { max-width: 680px; color: rgba(255,255,255,0.92); }
     .course-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -14,15 +23,16 @@
     }
     .course-card { background: #fff; border-radius: var(--radius); border: 1px solid var(--gray-bd); overflow: hidden; }
     .course-map {
-      height: 130px; display: flex; align-items: center;
+      height: 160px; display: flex; align-items: center;
       justify-content: center; font-size: 48px;
+      overflow: hidden;
     }
-    .map-sakurajima { background: linear-gradient(135deg, #c8d8e8, #9ab8d0); }
-    .map-ibusuki    { background: linear-gradient(135deg, #c8e0cc, #a0c8a8); }
-    .map-kirishima  { background: linear-gradient(135deg, #d4d0c8, #b8b4a8); }
-    .map-chiran     { background: linear-gradient(135deg, #e0d4c8, #c8b8a8); }
-    .map-cruise     { background: linear-gradient(135deg, #c0d0e8, #9ab0cc); }
+    .course-map img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .map-ibusuki img { object-position: center 60%; }
+    .map-chiran img { object-position: center 65%; }
     .map-custom     { background: linear-gradient(135deg, #e8e0d4, #d0c8b8); }
+    .course-photo-note { margin-top: 18px; color: var(--text-lt); font-size: 12px; line-height: 1.7; }
+    .course-photo-note a { color: var(--navy); text-decoration: underline; }
     .course-body { padding: 18px 20px; }
     .course-badge-row { display: flex; gap: 6px; margin-bottom: 10px; }
     .course-body h3 { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
@@ -74,7 +84,7 @@
 <body>
 <div id="site-header"></div>
 
-<div class="page-hero">
+<div class="page-hero sightseeing-hero">
   <div class="page-hero-inner">
     <div class="breadcrumb">
       <a href="index.html">ホーム</a><span>/</span>
@@ -95,7 +105,7 @@
     <div class="course-grid">
 
       <div class="course-card">
-        <div class="course-map map-sakurajima">🌋</div>
+        <div class="course-map"><img src="images/service-tour.jpg" width="960" height="720" loading="lazy" decoding="async" alt="桜島を望む鹿児島水族館付近の風景"></div>
         <div class="course-body">
           <div class="course-badge-row">
             <span class="badge badge-orange">人気No.1</span>
@@ -120,7 +130,7 @@
       </div>
 
       <div class="course-card">
-        <div class="course-map map-ibusuki">♨️</div>
+        <div class="course-map map-ibusuki"><img src="images/course-ibusuki.jpg" width="960" height="541" loading="lazy" decoding="async" alt="指宿温泉街と開聞岳を望む風景"></div>
         <div class="course-body">
           <div class="course-badge-row">
             <span class="badge badge-label">温泉</span>
@@ -145,7 +155,7 @@
       </div>
 
       <div class="course-card">
-        <div class="course-map map-chiran">🎌</div>
+        <div class="course-map map-chiran"><img src="images/course-chiran.jpg" width="960" height="720" loading="lazy" decoding="async" alt="知覧の武家屋敷通り"></div>
         <div class="course-body">
           <div class="course-badge-row">
             <span class="badge badge-label">歴史</span>
@@ -170,7 +180,7 @@
       </div>
 
       <div class="course-card">
-        <div class="course-map map-kirishima">🏔️</div>
+        <div class="course-map"><img src="images/course-kirishima.jpg" width="960" height="640" loading="lazy" decoding="async" alt="緑に囲まれた霧島神宮の本殿"></div>
         <div class="course-body">
           <div class="course-badge-row">
             <span class="badge badge-label">自然</span>
@@ -195,7 +205,7 @@
       </div>
 
       <div class="course-card">
-        <div class="course-map map-cruise">⚓</div>
+        <div class="course-map"><img src="images/service-cruise.jpg" width="960" height="720" loading="lazy" decoding="async" alt="マリンポートかごしまの海辺の風景"></div>
         <div class="course-body">
           <div class="course-badge-row">
             <span class="badge badge-label">クルーズ専用</span>
@@ -243,6 +253,7 @@
       </div>
 
     </div>
+    <p class="course-photo-note" data-i18n="k.photos.note">掲載写真は観光地の参考写真で、山元交通の車両・乗務員・お客様を写したものではありません。<a href="photo-credits.html">写真の出典とライセンス</a></p>
   </div>
 </section>
 
@@ -349,7 +360,7 @@
 </div>
 
 <div id="site-footer"></div>
-<script src="i18n.js"></script>
+<script src="i18n.js?v=20261022-sightseeing-photos"></script>
 <script src="common.js"></script>
 </body>
 </html>
