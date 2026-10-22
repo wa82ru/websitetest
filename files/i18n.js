@@ -526,6 +526,7 @@ const RYOUKIN = {
   ja: {
     'r.hero.h1': '料金案内',
     'r.hero.desc': '2026年4月の運賃改定に伴い料金を更新しました。<br>キャッシュレス決済（クレジットカード・QRコード）に全車対応しています。',
+    'r.photos.note': '鹿児島中央駅の参考写真です。<a href="photo-credits.html">写真の出典とライセンス</a>',
     'r.basic.title': '基本運賃', 'r.basic.sub': '2026年4月改定',
     'r.basic.label': '初乗り運賃',
     'r.basic.note': '1,300メートルまで',
@@ -543,6 +544,7 @@ const RYOUKIN = {
   en: {
     'r.hero.h1': 'Fare Guide',
     'r.hero.desc': 'Fares updated following the April 2026 revision.<br>Cashless payment (credit card & QR code) available in all vehicles.',
+    'r.photos.note': 'Reference photo of Kagoshima-Chuo Station. <a href="photo-credits.html">Photo source and license</a>',
     'r.basic.title': 'Basic Fare', 'r.basic.sub': 'Updated April 2026',
     'r.basic.label': 'Starting Fare',
     'r.basic.note': 'Up to 1,300 meters',
@@ -560,6 +562,7 @@ const RYOUKIN = {
   zh: {
     'r.hero.h1': '价格说明',
     'r.hero.desc': '费用已根据2026年4月的运价调整进行更新。<br>全车支持无现金支付（信用卡・二维码）。',
+    'r.photos.note': '鹿儿岛中央站的参考照片。<a href="photo-credits.html">照片来源与授权</a>',
     'r.basic.title': '基本运价', 'r.basic.sub': '2026年4月调整',
     'r.basic.label': '起步价',
     'r.basic.note': '1,300米以内',
@@ -577,6 +580,7 @@ const RYOUKIN = {
   ko: {
     'r.hero.h1': '요금 안내',
     'r.hero.desc': '2026년 4월 운임 개정에 따라 요금을 업데이트했습니다.<br>전 차량에서 카드・QR 결제가 가능합니다.',
+    'r.photos.note': '가고시마 중앙역의 참고 사진입니다. <a href="photo-credits.html">사진 출처 및 라이선스</a>',
     'r.basic.title': '기본 요금', 'r.basic.sub': '2026년 4월 개정',
     'r.basic.label': '기본 승차 요금',
     'r.basic.note': '1,300미터까지',
@@ -716,6 +720,7 @@ const CRUISE_DATA = {
     'cr.stat1': '2025年 鹿児島への寄港数（過去最多）', 'cr.stat2': '対応可能な滞在時間の目安', 'cr.stat3': 'マリンポートかごしまでお出迎え',
     'cr.pt1': '港から直接出発・帰着', 'cr.pt2': '乗船時間30分前には港に帰着保証', 'cr.pt3': '英語・中国語・韓国語 対応準備中', 'cr.pt4': 'キャッシュレス全車対応', 'cr.pt5': '事前予約推奨',
     'cr.courses.title': 'おすすめコース', 'cr.courses.sub': '滞在時間・ご興味に合わせてお選びください。カスタマイズも承ります。',
+    'cr.photos.note': '掲載写真は観光地の参考写真で、山元交通の車両・乗務員・お客様を写したものではありません。<a href="photo-credits.html">写真の出典とライセンス</a>',
     'cr.c1.title': '桜島ショートコース', 'cr.c1.s1': 'マリンポートかごしま → 桜島フェリー乗り場（約30分）', 'cr.c1.s2': '桜島フェリー乗船（15分）', 'cr.c1.s3': '溶岩なぎさ公園・湯之平展望所', 'cr.c1.s4': '港に戻って乗船 ✅',
     'cr.c2.title': '鹿児島市内ハイライト', 'cr.c2.s1': '仙巌園（磯庭園）・世界文化遺産', 'cr.c2.s2': '天文館（市内中心街・お土産・食事）', 'cr.c2.s3': '西郷隆盛銅像・城山展望台', 'cr.c2.s4': '港に戻って乗船 ✅',
     'cr.c3.title': '知覧・歴史遺産コース', 'cr.c3.s1': '知覧特攻平和会館（歴史遺産）', 'cr.c3.s2': '知覧武家屋敷庭園（国の名勝）', 'cr.c3.s3': '途中で薩摩の郷土料理を堪能', 'cr.c3.s4': '港に戻って乗船 ✅',
@@ -742,6 +747,7 @@ const CRUISE_DATA = {
     'cr.stat1': '2025 port calls to Kagoshima (record high)', 'cr.stat2': 'Available tour durations', 'cr.stat3': 'Pick-up at Marine Port Kagoshima',
     'cr.pt1': 'Departs and returns at the port', 'cr.pt2': 'Back at port 30 min before boarding', 'cr.pt3': 'EN / 中文 / 한국어 drivers coming soon', 'cr.pt4': 'Cashless payment in all vehicles', 'cr.pt5': 'Advance booking recommended',
     'cr.courses.title': 'Recommended Courses', 'cr.courses.sub': 'Choose by available time and interests. Custom itineraries available.',
+    'cr.photos.note': 'These are reference photos of the destinations, not Yamamoto Koutsuu vehicles, staff, or customers. <a href="photo-credits.html">Photo sources and licenses</a>',
     'cr.c1.title': 'Sakurajima Short Tour', 'cr.c1.s1': 'Marine Port → Sakurajima Ferry Terminal (approx. 30 min)', 'cr.c1.s2': 'Sakurajima Ferry (15 min)', 'cr.c1.s3': 'Lava Nagisa Park & Yunohira Observatory', 'cr.c1.s4': 'Return to port for boarding ✅',
     'cr.c2.title': 'Kagoshima City Highlights', 'cr.c2.s1': 'Sengan-en Garden (World Heritage)', 'cr.c2.s2': 'Tenmonkan (shopping, dining, souvenirs)', 'cr.c2.s3': 'Saigo Takamori Statue & Shiroyama Observatory', 'cr.c2.s4': 'Return to port for boarding ✅',
     'cr.c3.title': 'Chiran History Course', 'cr.c3.s1': 'Chiran Peace Museum (historic site)', 'cr.c3.s2': 'Chiran Samurai Residence Gardens (national scenic site)', 'cr.c3.s3': 'Optional: Satsuma cuisine en route', 'cr.c3.s4': 'Return to port for boarding ✅',
@@ -768,6 +774,7 @@ const CRUISE_DATA = {
     'cr.stat1': '2025年鹿儿岛靠港次数（历史最多）', 'cr.stat2': '可对应的游览时间', 'cr.stat3': '在鹿儿岛海洋港迎接',
     'cr.pt1': '从港口直接出发并返回', 'cr.pt2': '登船前30分钟保证返回港口', 'cr.pt3': '多语言司机培训中', 'cr.pt4': '全车支持无现金支付', 'cr.pt5': '建议提前预约',
     'cr.courses.title': '推荐行程', 'cr.courses.sub': '请根据停靠时间和兴趣选择，也可全程定制。',
+    'cr.photos.note': '所载照片仅供参考，展示观光地点，并非山元交通的车辆、司机或乘客。<a href="photo-credits.html">照片来源与授权</a>',
     'cr.c1.title': '樱岛快速游览', 'cr.c1.s1': '海洋港 → 樱岛渡轮码头（约30分钟）', 'cr.c1.s2': '乘坐樱岛渡轮（15分钟）', 'cr.c1.s3': '熔岩渚公园・汤之平展望台', 'cr.c1.s4': '返回港口登船 ✅',
     'cr.c2.title': '鹿儿岛市区精华游', 'cr.c2.s1': '仙巌园（世界文化遗产）', 'cr.c2.s2': '天文馆（购物、餐饮、纪念品）', 'cr.c2.s3': '西乡隆盛铜像・城山展望台', 'cr.c2.s4': '返回港口登船 ✅',
     'cr.c3.title': '知覧历史遗产路线', 'cr.c3.s1': '知覧特攻和平会馆（历史遗产）', 'cr.c3.s2': '知覧武家屋敷庭园（国家名胜）', 'cr.c3.s3': '途中品尝薩摩乡土料理', 'cr.c3.s4': '返回港口登船 ✅',
@@ -794,6 +801,7 @@ const CRUISE_DATA = {
     'cr.stat1': '2025년 가고시마 기항 횟수 (역대 최다)', 'cr.stat2': '대응 가능한 관광 시간', 'cr.stat3': '마린포트 가고시마에서 픽업',
     'cr.pt1': '항구에서 출발・귀항', 'cr.pt2': '승선 30분 전 항구 도착 보장', 'cr.pt3': '다국어 드라이버 준비 중', 'cr.pt4': '전 차량 카드 결제 지원', 'cr.pt5': '사전 예약 권장',
     'cr.courses.title': '추천 코스', 'cr.courses.sub': '체류 시간과 관심사에 맞게 선택하세요. 맞춤 구성도 가능합니다.',
+    'cr.photos.note': '사진은 관광지 참고 사진이며 야마모토 교통의 차량, 직원 또는 고객을 촬영한 것이 아닙니다. <a href="photo-credits.html">사진 출처 및 라이선스</a>',
     'cr.c1.title': '사쿠라지마 단기 코스', 'cr.c1.s1': '마린포트 → 사쿠라지마 페리 터미널 (약 30분)', 'cr.c1.s2': '사쿠라지마 페리 탑승 (15분)', 'cr.c1.s3': '용암 나기사 공원・유노히라 전망대', 'cr.c1.s4': '항구로 돌아와 승선 ✅',
     'cr.c2.title': '가고시마 시내 하이라이트', 'cr.c2.s1': '센간엔 (세계문화유산)', 'cr.c2.s2': '텐몬칸 (쇼핑・식사・기념품)', 'cr.c2.s3': '사이고 다카모리 동상・시로야마 전망대', 'cr.c2.s4': '항구로 돌아와 승선 ✅',
     'cr.c3.title': '치란 역사 유산 코스', 'cr.c3.s1': '치란 특공 평화회관 (역사 유적)', 'cr.c3.s2': '치란 무가 저택 정원 (국가 명승)', 'cr.c3.s3': '도중에 사쓰마 향토 요리 체험', 'cr.c3.s4': '항구로 돌아와 승선 ✅',

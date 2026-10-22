@@ -25,3 +25,7 @@ git push origin main
 ## 観光タクシーページの写真追加前に戻す場合
 
 観光タクシーページの写真を追加する直前の公開状態は、`backup/pre-sightseeing-photos-2026-10-22` ブランチに保存しています（コミット `b59601ae2e155a77dd997bc93eb148652c4e653a`）。この時点へ戻すには、上記の `git restore` 行の参照先を `origin/backup/pre-sightseeing-photos-2026-10-22` に変更して実行します。
+
+## クルーズ観光・料金案内の写真追加前に戻す場合
+
+今回の追加前の公開状態は、`backup/pre-cruise-fares-photos-2026-10-22` ブランチに保存しています（コミット `59ddaff4ac79ac9485669d2c18b509e41980fae6`）。この時点へ戻すには、上記の `git restore` 行の参照先を `origin/backup/pre-cruise-fares-photos-2026-10-22` に変更して実行します。

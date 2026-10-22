@@ -7,6 +7,12 @@
   <meta name="description" content="鹿児島マリンポートから出発。クルーズ船のお客様向け寄港地タクシーツアー。桜島・市内・知覧コース。乗船時間に合わせた設計。">
   <link rel="stylesheet" href="style.css">
   <style>
+    .cruise-hero {
+      background: linear-gradient(90deg, rgba(12,31,46,0.94), rgba(12,31,46,0.60)),
+        url('images/service-cruise.jpg') center 62% / cover;
+      padding: 52px 1.5rem 44px;
+      position: relative; overflow: hidden;
+    }
     .stat-row {
       display: flex; gap: 16px; flex-wrap: wrap;
     }
@@ -39,6 +45,10 @@
       gap: 18px;
     }
     .course-card { background: #fff; border-radius: var(--radius); border: 1px solid var(--gray-bd); overflow: hidden; }
+    .course-photo { height: 160px; overflow: hidden; background: var(--gray-lt); }
+    .course-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .course-photo-note { margin-top: 18px; color: var(--text-lt); font-size: 12px; line-height: 1.7; }
+    .course-photo-note a { color: var(--navy); text-decoration: underline; }
     .course-top { padding: 20px 20px 14px; }
     .course-badge-row { display: flex; gap: 6px; margin-bottom: 12px; align-items: center; }
     .course-card h3 { font-size: 16px; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
@@ -95,7 +105,7 @@
 <div id="site-header"></div>
 
 <!-- HERO -->
-<div style="background:var(--navy-dk);padding:48px 1.5rem 40px;position:relative;overflow:hidden;">
+<div class="cruise-hero">
   <div style="position:absolute;inset:0;background:radial-gradient(circle at 75% 50%,rgba(232,146,10,0.1) 0%,transparent 60%)"></div>
   <div class="page-hero-inner" style="position:relative">
     <div class="breadcrumb">
@@ -143,6 +153,7 @@
     <div class="course-grid">
 
       <div class="course-card">
+        <div class="course-photo"><img src="images/hero-sakurajima.jpg" width="1920" height="1080" loading="lazy" decoding="async" alt="鹿児島湾越しに見た桜島"></div>
         <div class="course-top">
           <div class="course-badge-row">
             <span class="badge badge-label">約2〜3時間</span>
@@ -167,6 +178,7 @@
       </div>
 
       <div class="course-card">
+        <div class="course-photo"><img src="images/service-daily.jpg" width="960" height="720" loading="lazy" decoding="async" alt="鹿児島市・天文館のアーケード"></div>
         <div class="course-top">
           <div class="course-badge-row">
             <span class="badge badge-label">約3〜4時間</span>
@@ -191,6 +203,7 @@
       </div>
 
       <div class="course-card">
+        <div class="course-photo"><img src="images/course-chiran.jpg" width="960" height="720" loading="lazy" decoding="async" alt="知覧の武家屋敷通り"></div>
         <div class="course-top">
           <div class="course-badge-row">
             <span class="badge badge-label">約5〜6時間</span>
@@ -239,6 +252,7 @@
       </div>
 
     </div>
+    <p class="course-photo-note" data-i18n="cr.photos.note">掲載写真は観光地の参考写真で、山元交通の車両・乗務員・お客様を写したものではありません。<a href="photo-credits.html">写真の出典とライセンス</a></p>
   </div>
 </section>
 
@@ -336,7 +350,7 @@
 </div>
 
 <div id="site-footer"></div>
-<script src="i18n.js"></script>
+<script src="i18n.js?v=20261022-cruise-photos"></script>
 <script src="common.js"></script>
 </body>
 </html>
