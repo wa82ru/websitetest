@@ -1,0 +1,38 @@
+<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>事務所 家具配置エディタ</title><style>body{margin:0;background:#eef2f6;font:14px system-ui;color:#17263c}header{background:#173650;color:white;padding:13px 16px}main{padding:12px;max-width:1300px;margin:auto}button,label.btn{border:1px solid #9bafbf;background:white;color:#173650;padding:9px 11px;border-radius:7px;cursor:pointer;display:inline-block}button.primary{background:#1761ac;color:white}.toolbar{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.frame{background:white;border:1px solid #ccd8e0;overflow:hidden;border-radius:9px}canvas{width:100%;height:auto;display:block;touch-action:none}input[type=file]{display:none}.details{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}.details input{width:68px;padding:8px;border:1px solid #bbb;border-radius:5px}small{color:#687887}p{line-height:1.5}.hint{background:#fff9e9;padding:10px;border-radius:8px}</style><header><b>事務所 家具配置エディタ</b>　<small style="color:#dbe9f3">iPad・PC対応</small></header><main><p class="hint">最初に「元の平面図を選択」で原図を読み込んでください。壁は画像として固定し、家具だけをドラッグできます。配置はこの端末に自動保存されます。</p><div class="toolbar"><label class="btn primary">元の平面図を選択<input id="bginput" type="file" accept="image/*"></label><button id="add">家具を追加</button><button id="del">選択家具を削除</button><button id="rot">90°回転</button><button id="export">配置データ保存</button><label class="btn">配置データ読込<input id="import" type="file" accept=".json,application/json"></label><button id="png">PNG保存</button></div><div class="frame"><canvas id="cv" width="1448" height="1086"></canvas></div><div class="details"><b>選択家具:</b><span id="name">なし</span><label>幅 mm <input id="w" type="number" min="100"></label><label>奥行 mm <input id="h" type="number" min="100"></label><button id="resize">寸法を適用</button><button id="restore">初期家具配置</button></div><p><small>面積34.273㎡（10.36坪）。家具寸法は提案値。壁との衝突・通路幅の安全性は自動判定しません。保存先は端末ごとです。共有する場合は配置データを書き出して移してください。</small></p></main><script>
+const c=document.getElementById('cv'),ctx=c.getContext('2d'),$=id=>document.getElementById(id);
+let bg=null,selected=null,drag=null;
+const unit=970/7400;
+const defaults=[
+{id:'desk',name:'白い執務デスク',x:740,y:770,w:1800,h:800,color:'#f7f9fb'},
+{id:'fridge',name:'冷蔵庫',x:300,y:462,w:600,h:600,color:'#ddeaf2'},
+{id:'slot1',name:'スロット1',x:474,y:440,w:600,h:700,color:'#c05859'},
+{id:'slot2',name:'スロット2',x:554,y:440,w:600,h:700,color:'#c05859'},
+{id:'slot3',name:'スロット3',x:634,y:440,w:600,h:700,color:'#c05859'},
+{id:'slot4',name:'スロット4',x:714,y:440,w:600,h:700,color:'#c05859'},
+{id:'meeting',name:'打合せテーブル',x:960,y:565,w:1200,h:750,color:'#e6bc86'},
+{id:'sofa',name:'ソファ',x:985,y:765,w:1600,h:750,color:'#a7aab0'},
+{id:'printer',name:'複合機',x:320,y:785,w:600,h:600,color:'#d7dae0'}
+];
+let items=JSON.parse(localStorage.getItem('office-items-v1')||'null')||defaults;
+const save=()=>localStorage.setItem('office-items-v1',JSON.stringify(items));
+const sz=f=>({w:f.w*unit,h:f.h*unit});
+function draw(){ctx.fillStyle='#fff';ctx.fillRect(0,0,c.width,c.height);if(bg)ctx.drawImage(bg,0,0,c.width,c.height);else{ctx.fillStyle='#edf0f5';ctx.fillRect(220,170,1030,750);ctx.fillStyle='#596879';ctx.font='24px system-ui';ctx.fillText('「元の平面図を選択」で原図を読み込んでください',310,300)}
+for(const f of items){const {w,h}=sz(f);ctx.fillStyle=f.color;ctx.strokeStyle=f.id===selected?'#0069e9':'#314153';ctx.lineWidth=f.id===selected?4:2;ctx.beginPath();ctx.roundRect(f.x-w/2,f.y-h/2,w,h,5);ctx.fill();ctx.stroke();ctx.fillStyle='#172332';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='bold 15px system-ui';ctx.fillText(f.name,f.x,f.y-7);ctx.font='12px system-ui';ctx.fillText(f.w+'×'+f.h,f.x,f.y+12)}}
+function info(){let f=items.find(x=>x.id===selected);$('name').textContent=f?.name||'なし';$('w').value=f?.w||'';$('h').value=f?.h||''}
+function pos(e){let r=c.getBoundingClientRect();return{x:(e.clientX-r.left)*c.width/r.width,y:(e.clientY-r.top)*c.height/r.height}}
+c.addEventListener('pointerdown',e=>{const p=pos(e);let f=[...items].reverse().find(f=>{const s=sz(f);return Math.abs(p.x-f.x)<s.w/2&&Math.abs(p.y-f.y)<s.h/2});selected=f?.id||null;drag=f?{id:f.id,dx:p.x-f.x,dy:p.y-f.y}:null;c.setPointerCapture(e.pointerId);info();draw()});
+c.addEventListener('pointermove',e=>{if(!drag)return;const f=items.find(f=>f.id===drag.id),p=pos(e),s=sz(f);f.x=Math.max(0,Math.min(c.width,p.x-drag.dx));f.y=Math.max(0,Math.min(c.height,p.y-drag.dy));draw()});
+const end=()=>{drag=null;save()};c.addEventListener('pointerup',end);c.addEventListener('pointercancel',end);
+function setBG(url){let im=new Image();im.onload=()=>{bg=im;draw()};im.src=url}
+$('bginput').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{setBG(r.result);try{localStorage.setItem('office-bg-v1',r.result)}catch(e){alert('原図は表示されていますが容量制限で保存できません。次回は再選択してください。')}};r.readAsDataURL(f)};
+$('add').onclick=()=>{let name=prompt('家具の名前','収納棚');if(!name)return;let id='f'+Date.now();items.push({id,name,x:700,y:650,w:800,h:400,color:'#c2d4ba'});selected=id;save();info();draw()};
+$('del').onclick=()=>{if(!selected)return;items=items.filter(f=>f.id!==selected);selected=null;save();info();draw()};
+$('rot').onclick=()=>{let f=items.find(x=>x.id===selected);if(!f)return;[f.w,f.h]=[f.h,f.w];save();info();draw()};
+$('resize').onclick=()=>{let f=items.find(x=>x.id===selected);if(!f)return;f.w=Math.max(100,Number($('w').value)||f.w);f.h=Math.max(100,Number($('h').value)||f.h);save();draw()};
+$('restore').onclick=()=>{if(confirm('家具配置を初期状態に戻しますか？')){items=structuredClone(defaults);selected=null;save();info();draw()}};
+function dl(name,data){let a=document.createElement('a');a.href=data;a.download=name;a.click()}
+$('export').onclick=()=>dl('office-layout.json','data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify(items,null,2)));
+$('import').onchange=async e=>{try{let data=JSON.parse(await e.target.files[0].text());if(!Array.isArray(data))throw 0;items=data;save();draw()}catch(e){alert('読み込めませんでした')}};
+$('png').onclick=()=>dl('office-layout.png',c.toDataURL('image/png'));
+const storedBG=localStorage.getItem('office-bg-v1');if(storedBG)setBG(storedBG);draw();
+</script></html>
